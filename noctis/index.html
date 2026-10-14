@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOCTIS · Eau de parfum, lot 07</title>
+  <meta name="description" content="NOCTIS is a dark amber eau de parfum of black rose, smoked oud and vanilla. Concept project by Otiniel B.">
+  <meta property="og:title" content="NOCTIS · Made for the hour after the party">
+  <meta property="og:description" content="A dark amber eau de parfum of black rose, smoked oud and vanilla.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ebe6dc">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ebe6dc'/%3E%3Ctext x='32' y='47' font-family='Didot,Georgia,serif' font-size='44' fill='%23161412' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js",
+      "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.mjs"
+    }
+  }
+  </script>
+</head>
+<body class="is-loading">
+
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__row mono"><span>NOCTIS</span><span>Lot 07/26</span></div>
+    <div>
+      <div class="preloader__bar"><span></span></div>
+      <div class="preloader__row mono" style="margin-top:10px"><span class="preloader__status">Preparing the flacon</span><span class="preloader__pct">0</span></div>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <canvas class="webgl" aria-hidden="true"></canvas>
+
+  <header class="nav grid mono">
+    <a href="#" class="nav__logo">NOCTIS</a>
+    <span class="nav__lot">Eau de parfum · Lot 07/26</span>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#formula">Formula</a>
+      <a href="#bottle">Bottle</a>
+      <a href="#order">Order</a>
+      <a href="#order" class="nav__bag">Bag (<span class="bag-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero grid">
+      <div class="hero__fallback" aria-hidden="true">NOCTIS</div>
+      <div class="hero__copy">
+        <h1 class="hero__headline">
+          <span class="line"><span>Made for the hour</span></span>
+          <span class="line"><span>after the party.</span></span>
+        </h1>
+        <p class="hero__text">A dark amber eau de parfum of black rose, smoked oud and vanilla. Worn close to the skin, it lasts until the street lights go off.</p>
+      </div>
+      <div class="hero__specs">
+        <ul class="specs mono">
+          <li><span>Concentration</span><span>22%</span></li>
+          <li><span>Volume</span><span>50 ml</span></li>
+          <li><span>Maceration</span><span>18 months</span></li>
+          <li><span>Batch</span><span>07 of 12</span></li>
+        </ul>
+        <a href="#order" class="link mono">Order a flacon · €145 <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="statement grid">
+      <p class="margin-note mono">01 / The idea</p>
+      <p class="statement__text">Most night perfumes smell like the club. We wanted the walk home: cold air, somebody else’s cigarette, and the rose that was still pinned to your coat.</p>
+    </section>
+
+    <!-- The page gets darker as the evening goes on; the section stays pinned while the acts play -->
+    <section class="journey" id="formula" aria-label="The formula, in three acts">
+      <div class="journey__sticky">
+        <div class="act grid is-active">
+          <div class="act__head">
+            <p class="act__time">06:12</p>
+            <p class="act__label mono">I · Opening / top notes</p>
+            <p class="act__diary">Eleven versions of this opening. The pink pepper kept winning, so we let it.</p>
+          </div>
+          <ul class="act__formula mono">
+            <li class="act__formula-title">Formula, top</li>
+            <li><span>Calabrian bergamot</span><span>12.4%</span></li>
+            <li><span>Pink pepper</span><span>6.0%</span></li>
+            <li><span>Bitter orange</span><span>3.8%</span></li>
+            <li><span>Aldehyde C-11</span><span>0.4%</span></li>
+          </ul>
+        </div>
+
+        <div class="act grid">
+          <div class="act__head">
+            <p class="act__time">19:40</p>
+            <p class="act__label mono">II · Heart</p>
+            <p class="act__diary">Rose, but not the pretty kind. Black Baccara petals left out a day too long, next to smoked oud.</p>
+          </div>
+          <ul class="act__formula mono">
+            <li class="act__formula-title">Formula, heart</li>
+            <li><span>Black rose absolute</span><span>9.2%</span></li>
+            <li><span>Smoked oud</span><span>7.5%</span></li>
+            <li><span>Saffron</span><span>1.1%</span></li>
+            <li><span>Clove bud</span><span>0.6%</span></li>
+          </ul>
+        </div>
+
+        <div class="act grid">
+          <div class="act__head">
+            <p class="act__time">23:58</p>
+            <p class="act__label mono">III · Base / what stays</p>
+            <p class="act__diary">What is still on your scarf the next morning. Amber, vanilla and a little of the night before.</p>
+          </div>
+          <ul class="act__formula mono">
+            <li class="act__formula-title">Formula, base</li>
+            <li><span>Labdanum amber</span><span>14.0%</span></li>
+            <li><span>Madagascar vanilla</span><span>8.3%</span></li>
+            <li><span>Ambrox</span><span>5.0%</span></li>
+            <li><span>White musk</span><span>4.2%</span></li>
+          </ul>
+        </div>
+
+        <div class="journey__index grid mono" aria-hidden="true">
+          <ol>
+            <li class="is-active">06:12 Opening</li>
+            <li>19:40 Heart</li>
+            <li>23:58 Base</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottle" id="bottle">
+      <div class="grid">
+        <p class="margin-note mono">02 / The bottle</p>
+        <div class="bottle__head" style="grid-column: 3 / 13">
+          <h2 class="title">Heavy<br><em>on purpose.</em></h2>
+          <p>We wanted it to sit in the hand like a paperweight, and on a nightstand like an object rather than a product. 212 grams of glass, brass and paper.</p>
+        </div>
+
+        <div class="bottle__drawing">
+          <svg class="drawing" viewBox="0 0 520 660" role="img" aria-label="Technical drawing of the NOCTIS flacon, 112 by 64 millimetres">
+            <text class="fade" x="0" y="20">NOCTIS · FLACON 50 ML · DWG 07/26 · SCALE 1:1</text>
+
+            <rect class="part draw" pathLength="1" x="187" y="117" width="146" height="97" rx="3"/>
+            <line class="part draw" pathLength="1" x1="187" y1="140" x2="333" y2="140"/>
+            <rect class="part draw" pathLength="1" x="215.5" y="214" width="89" height="16"/>
+            <rect class="part draw" pathLength="1" x="130" y="230" width="260" height="357" rx="16"/>
+            <path class="hidden-line fade" d="M146 246 V530 H374 V246"/>
+            <rect class="hidden-line fade" x="180" y="330" width="160" height="100"/>
+            <text class="fade" x="260" y="384" text-anchor="middle">LABEL</text>
+
+            <path class="dim draw" pathLength="1" d="M400 117 H448 M400 587 H448 M436 117 V587 M431 122 L441 112 M431 592 L441 582"/>
+            <text class="fade" x="456" y="356" transform="rotate(-90 456 356)" text-anchor="middle">112 MM</text>
+            <path class="dim draw" pathLength="1" d="M130 597 V632 M390 597 V632 M130 620 H390 M125 625 L135 615 M385 625 L395 615"/>
+            <text class="fade" x="260" y="650" text-anchor="middle">64 MM</text>
+
+            <path class="dim draw" pathLength="1" d="M187 165 H62 M215 222 H62 M180 380 H62 M146 560 H62"/>
+            <g class="fade">
+              <circle class="tag" cx="50" cy="165" r="11"/><text class="tag-num" x="50" y="169">1</text>
+              <circle class="tag" cx="50" cy="222" r="11"/><text class="tag-num" x="50" y="226">2</text>
+              <circle class="tag" cx="50" cy="380" r="11"/><text class="tag-num" x="50" y="384">3</text>
+              <circle class="tag" cx="50" cy="560" r="11"/><text class="tag-num" x="50" y="564">4</text>
+            </g>
+          </svg>
+        </div>
+
+        <ol class="callouts">
+          <li><span class="mono">01</span><div><h3>Cap</h3><p>Black anodised aluminium. It closes with a soft, heavy click.</p></div></li>
+          <li><span class="mono">02</span><div><h3>Collar</h3><p>Brass, crimped by hand onto the neck.</p></div></li>
+          <li><span class="mono">03</span><div><h3>Label</h3><p>Letterpress on cotton paper. Each one is numbered in pencil.</p></div></li>
+          <li><span class="mono">04</span><div><h3>Base</h3><p>14 mm of polished glass, so the liquid seems to float above the table.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="order" id="order">
+      <div class="grid">
+        <p class="margin-note mono">03 / Order</p>
+        <h2 class="title order__head">Four ways <em>in.</em></h2>
+        <ul class="order__list">
+          <li><button type="button" class="order__row" data-cursor="Add"><span class="order__no mono">No. 01</span><span class="order__name">Envelope</span><span class="order__detail mono">Three 2 ml vials</span><span class="order__price">€12</span><span class="order__add mono">Add</span></button></li>
+          <li><button type="button" class="order__row" data-cursor="Add"><span class="order__no mono">No. 02</span><span class="order__name">Travel</span><span class="order__detail mono">30 ml</span><span class="order__price">€95</span><span class="order__add mono">Add</span></button></li>
+          <li><button type="button" class="order__row" data-cursor="Add"><span class="order__no mono">No. 03</span><span class="order__name">Flacon</span><span class="order__detail mono">50 ml</span><span class="order__price">€145</span><span class="order__add mono">Add</span></button></li>
+          <li><button type="button" class="order__row" data-cursor="Add"><span class="order__no mono">No. 04</span><span class="order__name">Collector</span><span class="order__detail mono">100 ml, numbered</span><span class="order__price">€210</span><span class="order__add mono">Add</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="samples">
+      <div class="grid">
+        <p class="margin-note mono">04 / Samples</p>
+        <h2 class="title samples__title">Samples ship in a <em>black envelope.</em></h2>
+        <div class="samples__body">
+          <p>Three 2 ml vials for €12. Wear each one for a full evening. If you order a bottle within 30 days, we take the €12 off.</p>
+          <button type="button" class="btn mono samples__add" data-cursor="Add"><span>Order the envelope · €12</span><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="grid footer__row mono">
+      <p class="footer__credit">Concept project. Design and development by Otiniel B.</p>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#formula">Formula</a>
+        <a href="#bottle">Bottle</a>
+        <a href="#order">Order</a>
+      </nav>
+    </div>
+    <p class="footer__mark" aria-hidden="true">NOCTIS</p>
+  </footer>
+
+  <!-- Failsafe: if the scripts cannot load (offline, blocked CDN), show the page instead of a stuck preloader -->
+  <script>
+    setTimeout(function () {
+      if (window.__noctisReady) return;
+      document.documentElement.classList.add('no-webgl');
+      document.body.classList.remove('is-loading');
+      var p = document.querySelector('.preloader');
+      if (p) p.remove();
+    }, 15000);
+  </script>
+
+  <!-- All scripts live inline so the page also works when opened straight from disk -->
+  <script type="module">
+    import * as THREE from 'three';
+    import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+    import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+    import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import Lenis from 'lenis';
+
+    window.__noctisReady = true;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = matchMedia('(max-width: 767px), (hover: none)').matches;
+    const PAPER = '#ebe6dc';
+    const INK = '#161412';
+
+    // =====================================================================
+    // WebGL stage: the wordmark backdrop, the labelled glass flacon, dust.
+    // =====================================================================
+    function createScene(canvas) {
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(PAPER);
+      const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0, 8);
+
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+      const STUDIO_HDR = 'https://cdn.jsdelivr.net/gh/pmndrs/drei-assets@456060a26bbeb8fdf79326f224b6d99b8bcce736/hdri/studio_small_03_1k.hdr';
+      const envReady = new Promise((resolve) => {
+        setTimeout(resolve, 6000); // never hold the page hostage to a slow download
+        new RGBELoader().load(STUDIO_HDR, (hdr) => {
+          scene.environment = pmrem.fromEquirectangular(hdr).texture;
+          hdr.dispose();
+          resolve();
+        }, undefined, resolve);
+      });
+
+      const key = new THREE.DirectionalLight('#fff1e0', 1.6);
+      key.position.set(3, 4, 5);
+      const rim = new THREE.DirectionalLight('#ffffff', 1.0);
+      rim.position.set(-4, 2, -3);
+      scene.add(key, rim);
+
+      // ---- Backdrop: the wordmark lives in the scene so the glass can refract it ----
+      const BACKDROP_Z = -3;
+      const backdropCanvas = document.createElement('canvas');
+      const backdropTexture = new THREE.CanvasTexture(backdropCanvas);
+      backdropTexture.colorSpace = THREE.SRGBColorSpace;
+      const backdrop = new THREE.Mesh(
+        new THREE.PlaneGeometry(1, 1),
+        new THREE.MeshBasicMaterial({ map: backdropTexture, toneMapped: false })
+      );
+      backdrop.position.z = BACKDROP_Z;
+      scene.add(backdrop);
+
+      const visibleHeightAt = (z) => 2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * (camera.position.z - z);
+
+      function drawBackdrop() {
+        const aspect = window.innerWidth / window.innerHeight;
+        const W = isMobile ? 1024 : 2048;
+        const H = Math.min(Math.round(W / aspect), 4096);
+        backdropCanvas.width = W;
+        backdropCanvas.height = H;
+        const ctx = backdropCanvas.getContext('2d');
+        ctx.fillStyle = PAPER;
+        ctx.fillRect(0, 0, W, H);
+
+        let size = 100;
+        const setFont = () => {
+          ctx.font = `400 ${size}px "Bodoni Moda"`;
+          ctx.letterSpacing = `${-size * 0.02}px`;
+        };
+        setFont();
+        size *= (W * (isMobile ? 0.96 : 0.94)) / ctx.measureText('NOCTIS').width;
+        setFont();
+        ctx.fillStyle = INK;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('NOCTIS', W / 2, H * (isMobile ? 0.36 : 0.47)); // mobile: raised to sit behind the bottle
+
+        backdropTexture.needsUpdate = true;
+        const h = visibleHeightAt(BACKDROP_Z) * 1.15;
+        backdrop.scale.set(h * aspect, h, 1);
+      }
+
+      // ---- The flacon ----
+      const bottle = new THREE.Group(); // driven every frame
+      const intro = new THREE.Group();  // animated once on reveal
+      bottle.add(intro);
+      scene.add(bottle);
+
+      // One solid block of smoked glass: it refracts the wordmark like real thick glass,
+      // and dispersion splits light into faint rainbows along the polished edges.
+      const glass = new THREE.Mesh(
+        new RoundedBoxGeometry(1.5, 2.0, 0.95, 8, 0.07),
+        new THREE.MeshPhysicalMaterial({
+          color: '#ffffff',
+          roughness: 0,
+          transmission: 1,
+          thickness: 1.5,
+          ior: 1.52,
+          dispersion: 1,
+          specularIntensity: 1,
+          clearcoat: 1,
+          clearcoatRoughness: 0,
+          attenuationColor: new THREE.Color('#6b4452'),
+          attenuationDistance: 3.2,
+          envMapIntensity: 1.3,
+        })
+      );
+
+      const gold = new THREE.MeshPhysicalMaterial({ color: '#c8a465', metalness: 1, roughness: 0.26, clearcoat: 0.4, clearcoatRoughness: 0.2 });
+      const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.12, 48), gold);
+      collar.position.y = 1.06;
+      const cap = new THREE.Mesh(new RoundedBoxGeometry(0.66, 0.62, 0.66, 4, 0.05), gold);
+      cap.position.y = 1.43;
+
+      // Letterpress label, drawn once the fonts are ready.
+      const labelCanvas = document.createElement('canvas');
+      labelCanvas.width = 1024;
+      labelCanvas.height = 640;
+      const labelTexture = new THREE.CanvasTexture(labelCanvas);
+      labelTexture.colorSpace = THREE.SRGBColorSpace;
+      labelTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      const label = new THREE.Mesh(
+        new THREE.PlaneGeometry(1.02, 0.64),
+        new THREE.MeshPhysicalMaterial({ map: labelTexture, color: '#f3d9a0', emissive: '#8a6424', emissiveMap: labelTexture, metalness: 0.35, roughness: 0.3, transparent: true, side: THREE.DoubleSide })
+      );
+      label.position.set(0, -0.18, 0.478);
+
+      function drawLabel() {
+        const c = labelCanvas.getContext('2d');
+        const W = 1024, H = 640;
+        c.clearRect(0, 0, W, H);
+        c.fillStyle = '#ffffff';
+        c.textAlign = 'center';
+        c.textBaseline = 'alphabetic';
+        c.font = '400 168px "Bodoni Moda"';
+        c.letterSpacing = '10px';
+        c.fillText('NOCTIS', W / 2, 270);
+        c.font = '400 30px "IBM Plex Mono"';
+        c.letterSpacing = '6px';
+        c.fillText('EAU DE PARFUM', W / 2, 345);
+        c.fillRect(180, 395, W - 360, 2);
+        c.letterSpacing = '2px';
+        c.textAlign = 'left';
+        c.fillText('LOT 07/26', 110, 470);
+        c.textAlign = 'right';
+        c.fillText('50 ML · 22%', W - 110, 470);
+        c.textAlign = 'center';
+        c.font = 'italic 400 46px "Bodoni Moda"';
+        c.letterSpacing = '0px';
+        c.fillText('N° 418', W / 2, 565);
+        labelTexture.needsUpdate = true;
+      }
+
+      const parts = new THREE.Group();
+      parts.add(glass, collar, cap, label);
+      parts.position.y = -0.37; // centre the flacon (from -1.0 to 1.74) on the origin
+      intro.add(parts);
+      bottle.scale.setScalar(isMobile ? 0.62 : 0.9);
+
+      // ---- Dust: petals, smoke or gold depending on the hour ----
+      const DUST = isMobile ? 500 : 1800;
+      const dustPositions = new Float32Array(DUST * 3);
+      const dustSpeeds = new Float32Array(DUST);
+      for (let i = 0; i < DUST; i++) {
+        dustPositions[i * 3] = (Math.random() - 0.5) * 12;
+        dustPositions[i * 3 + 1] = (Math.random() - 0.5) * 8;
+        dustPositions[i * 3 + 2] = (Math.random() - 0.5) * 6;
+        dustSpeeds[i] = 0.05 + Math.random() * 0.15;
+      }
+      const dustGeometry = new THREE.BufferGeometry();
+      dustGeometry.setAttribute('position', new THREE.BufferAttribute(dustPositions, 3));
+      const sprite = document.createElement('canvas');
+      sprite.width = sprite.height = 64;
+      const sctx = sprite.getContext('2d');
+      const dot = sctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      dot.addColorStop(0, 'rgba(255,255,255,1)');
+      dot.addColorStop(0.45, 'rgba(255,255,255,0.4)');
+      dot.addColorStop(1, 'rgba(255,255,255,0)');
+      sctx.fillStyle = dot;
+      sctx.fillRect(0, 0, 64, 64);
+      const dust = new THREE.Points(dustGeometry, new THREE.PointsMaterial({
+        map: new THREE.CanvasTexture(sprite), transparent: true, depthWrite: false, opacity: 0,
+      }));
+      scene.add(dust);
+
+      // ---- The hours: paper, dawn, dusk, midnight ----
+      const worlds = [
+        { bg: PAPER,     key: '#fff1e0', dust: INK,       tint: '#6b4452', vy: 1,    size: 0.04, opacity: 0 },
+        { bg: '#e8ccb2', key: '#ffd2a8', dust: '#7a3b22', tint: '#9a5a44', vy: -0.5, size: 0.05, opacity: 0.35 },
+        { bg: '#4a171c', key: '#ff8a7a', dust: PAPER,     tint: '#8a2a36', vy: 0.25, size: 0.22, opacity: 0.12 },
+        { bg: '#0c0e16', key: '#b9c6ff', dust: '#e9d3a0', tint: '#3a4466', vy: 1.1,  size: 0.05, opacity: 0.75 },
+      ].map((w) => ({
+        ...w,
+        bg: new THREE.Color(w.bg), key: new THREE.Color(w.key),
+        dust: new THREE.Color(w.dust), tint: new THREE.Color(w.tint),
+      }));
+      let dustVy = 1;
+
+      function applyWorld(j) {
+        const pos = THREE.MathUtils.clamp(j + 1, 0, 3);
+        const i = Math.min(Math.floor(pos), 2);
+        let f = pos - i;
+        if (i > 0) f = THREE.MathUtils.smoothstep(f, 0.3, 0.7); // hold each hour, then cross-fade
+        const a = worlds[i], b = worlds[i + 1];
+        scene.background.copy(a.bg).lerp(b.bg, f);
+        key.color.copy(a.key).lerp(b.key, f);
+        dust.material.color.copy(a.dust).lerp(b.dust, f);
+        glass.material.attenuationColor.copy(a.tint).lerp(b.tint, f);
+        dust.material.size = THREE.MathUtils.lerp(a.size, b.size, f);
+        dust.material.opacity = THREE.MathUtils.lerp(a.opacity, b.opacity, f);
+        dustVy = THREE.MathUtils.lerp(a.vy, b.vy, f);
+      }
+
+      // ---- State & loop ----
+      const pointer = { x: 0, y: 0, sx: 0, sy: 0 };
+      let scroll = 0, journey = -1, active = true;
+      const clock = new THREE.Clock();
+
+      function tick() {
+        requestAnimationFrame(tick);
+        const dt = Math.min(clock.getDelta(), 0.05);
+        const t = clock.elapsedTime;
+        if (!active) return; // covered by the solid sections below the journey
+
+        applyWorld(journey);
+        pointer.sx += (pointer.x - pointer.sx) * 0.06;
+        pointer.sy += (pointer.y - pointer.sy) * 0.06;
+
+        // A slow sway keeps the label mostly facing you in the hero; scrolling turns the flacon.
+        const sway = reducedMotion ? 0 : Math.sin(t * 0.35) * 0.38;
+        bottle.rotation.y = sway + pointer.sx * 0.35 + scroll * Math.PI * 2;
+        bottle.rotation.x = -pointer.sy * 0.15;
+        key.position.set(3 + pointer.sx * 3, 4 + pointer.sy * 2, 5);
+        bottle.position.y = (reducedMotion ? 0 : Math.sin(t * 0.8) * 0.06) - Math.min(scroll, 1) * 0.3;
+        if (isMobile) bottle.position.y += 0.85; // copy sits at the bottom on phones
+
+        backdrop.position.y = Math.min(scroll, 1.5) * visibleHeightAt(BACKDROP_Z);
+
+        if (!reducedMotion && dust.material.opacity > 0.01) {
+          const p = dustGeometry.attributes.position.array;
+          for (let i = 0; i < DUST; i++) {
+            p[i * 3 + 1] += dustSpeeds[i] * dustVy * dt;
+            if (p[i * 3 + 1] > 4) p[i * 3 + 1] = -4;
+            else if (p[i * 3 + 1] < -4) p[i * 3 + 1] = 4;
+          }
+          dustGeometry.attributes.position.needsUpdate = true;
+        }
+
+        renderer.render(scene, camera);
+      }
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(drawBackdrop, 150);
+      });
+
+      // Renders the flacon alone, three-quarter view, on paper; reused as a product image.
+      let snapshot = null;
+      function takeSnapshot() {
+        const W = 480, H = 600;
+        backdrop.visible = dust.visible = false;
+        bottle.rotation.set(0.04, 0.42, 0);
+        bottle.position.set(0, 0, 0);
+        const prevScale = bottle.scale.x;
+        bottle.scale.setScalar(1.35);
+        camera.aspect = W / H;
+        camera.updateProjectionMatrix();
+        renderer.setPixelRatio(1);
+        renderer.setSize(W, H, false);
+        renderer.render(scene, camera);
+        const url = renderer.domElement.toDataURL('image/png');
+        backdrop.visible = dust.visible = true;
+        bottle.scale.setScalar(prevScale);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        return url;
+      }
+
+      const ready = Promise.all([
+        document.fonts.load('400 100px "Bodoni Moda"'),
+        document.fonts.load('italic 400 46px "Bodoni Moda"'),
+        document.fonts.load('400 30px "IBM Plex Mono"'),
+        envReady,
+      ]).then(() => {
+        drawBackdrop();
+        drawLabel();
+        renderer.compile(scene, camera);
+        snapshot = takeSnapshot();
+        tick();
+      });
+
+      return {
+        ready, intro,
+        setPointer: (x, y) => { pointer.x = x; pointer.y = y; },
+        setScroll: (p) => { scroll = p; },
+        setJourney: (j) => { journey = j; },
+        setActive: (on) => { active = on; },
+        getSnapshot: () => snapshot,
+      };
+    }
+
+    // =====================================================================
+    // Page
+    // =====================================================================
+    let lenis = null;
+    if (!reducedMotion) {
+      lenis = new Lenis({ lerp: 0.09 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+      lenis.stop();
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href');
+        const target = id.length > 1 ? document.querySelector(id) : 0;
+        if (target === null) return;
+        e.preventDefault();
+        if (lenis) lenis.scrollTo(target, { duration: 1.6 });
+        else window.scrollTo({ top: target ? target.offsetTop : 0 });
+      });
+    });
+
+    function hasWebGL() {
+      try {
+        const c = document.createElement('canvas');
+        return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl')));
+      } catch { return false; }
+    }
+
+    let scene = null;
+    if (hasWebGL()) {
+      try { scene = createScene(document.querySelector('.webgl')); }
+      catch (err) { console.warn('WebGL scene unavailable, using fallback.', err); }
+    }
+    if (!scene) document.documentElement.classList.add('no-webgl');
+
+    if (scene) {
+      window.addEventListener('pointermove', (e) => {
+        scene.setPointer((e.clientX / window.innerWidth) * 2 - 1, -((e.clientY / window.innerHeight) * 2 - 1));
+      }, { passive: true });
+      window.addEventListener('scroll', () => scene.setScroll(window.scrollY / window.innerHeight), { passive: true });
+    }
+
+    // ---------- Preloader ----------
+    const bar = document.querySelector('.preloader__bar span');
+    const pct = document.querySelector('.preloader__pct');
+    const progress = { v: 0 };
+    const renderProgress = () => {
+      bar.style.transform = `scaleX(${progress.v / 100})`;
+      pct.textContent = Math.round(progress.v);
+    };
+    const loading = gsap.to(progress, { v: 86, duration: 1.6, ease: 'power2.inOut', onUpdate: renderProgress });
+
+    await Promise.all([loading.then(), document.fonts.ready, scene ? scene.ready : null]);
+
+    gsap.timeline()
+      .to(progress, { v: 100, duration: 0.45, ease: 'power2.out', onUpdate: renderProgress })
+      .to('.preloader', { yPercent: -100, duration: 1.1, ease: 'expo.inOut' }, '+=0.15')
+      .add(heroIntro, '-=0.6')
+      .add(() => {
+        document.body.classList.remove('is-loading');
+        document.querySelector('.preloader').remove();
+        lenis?.start();
+      });
+
+    function heroIntro() {
+      gsap.from('.nav > *', { opacity: 0, duration: 1.2, stagger: 0.07, ease: 'power2.out' });
+      gsap.from('.hero__headline .line > span', { yPercent: 105, duration: 1.3, stagger: 0.1, ease: 'expo.out' });
+      gsap.from('.hero__text, .hero__specs > *', { opacity: 0, y: 16, duration: 1.2, stagger: 0.1, delay: 0.25, ease: 'power3.out' });
+      if (scene) {
+        gsap.from(scene.intro.scale, { x: 0.7, y: 0.7, z: 0.7, duration: 2.2, ease: 'expo.out' });
+        gsap.from(scene.intro.rotation, { y: -Math.PI * 0.75, duration: 2.4, ease: 'expo.out' });
+      }
+      gsap.to('.hero__copy, .hero__specs', {
+        opacity: 0, y: -50, ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: '55% top', scrub: true },
+      });
+    }
+
+    // ---------- Statement: words darken as you read ----------
+    function splitWords(el) {
+      [...el.childNodes].forEach((node) => {
+        if (node.nodeType !== Node.TEXT_NODE) return;
+        const frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach((part) => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.append(part); return; }
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = part;
+          frag.append(span);
+        });
+        node.replaceWith(frag);
+      });
+    }
+    if (!reducedMotion) {
+      const statement = document.querySelector('.statement__text');
+      splitWords(statement);
+      gsap.to(statement.querySelectorAll('.word'), {
+        opacity: 1, stagger: 0.05, ease: 'none',
+        scrollTrigger: { trigger: statement, start: 'top 75%', end: 'bottom 45%', scrub: true },
+      });
+    }
+
+    // ---------- Journey: paper → dawn → dusk → midnight ----------
+    const journeyEl = document.querySelector('.journey');
+    const acts = document.querySelectorAll('.act');
+    const marks = document.querySelectorAll('.journey__index li');
+    let currentAct = 0;
+
+    ScrollTrigger.create({
+      trigger: journeyEl,
+      start: 'top bottom',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        const span = journeyEl.offsetHeight;
+        const entry = window.innerHeight / span; // share of progress spent scrolling the section in
+        const p = self.progress;
+        const j = p < entry ? -1 + p / entry : ((p - entry) / (1 - entry)) * 2;
+        scene?.setJourney(j);
+
+        const next = Math.min(2, Math.round(Math.max(0, j)));
+        if (next !== currentAct) {
+          acts[currentAct].classList.remove('is-active');
+          marks[currentAct].classList.remove('is-active');
+          acts[next].classList.add('is-active');
+          marks[next].classList.add('is-active');
+          currentAct = next;
+        }
+        journeyEl.classList.toggle('is-dark', next >= 1);
+      },
+    });
+
+    // Stop drawing WebGL once the paper sections cover it.
+    ScrollTrigger.create({
+      trigger: '.bottle',
+      start: 'top top',
+      onEnter: () => scene?.setActive(false),
+      onLeaveBack: () => scene?.setActive(true),
+    });
+
+    // ---------- Reveals ----------
+    if (!reducedMotion) {
+      gsap.utils.toArray('.title').forEach((el) => {
+        gsap.from(el, { y: 60, opacity: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+      });
+
+      // The technical drawing draws itself, then labels and dimensions fade in.
+      const lines = gsap.utils.toArray('.drawing .draw');
+      gsap.set(lines, { strokeDasharray: 1, strokeDashoffset: 1 });
+      gsap.timeline({ scrollTrigger: { trigger: '.bottle__drawing', start: 'top 70%' } })
+        .to(lines, { strokeDashoffset: 0, duration: 1.6, stagger: 0.12, ease: 'power2.inOut' })
+        .from('.drawing .fade', { opacity: 0, duration: 0.8, stagger: 0.05 }, '-=0.6');
+
+      gsap.from('.callouts li', {
+        opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power3.out',
+        scrollTrigger: { trigger: '.callouts', start: 'top 80%' },
+      });
+      gsap.from('.order__row', {
+        opacity: 0, y: 30, duration: 1, stagger: 0.08, ease: 'power3.out',
+        scrollTrigger: { trigger: '.order__list', start: 'top 85%' },
+      });
+    }
+
+    // ---------- Nav hides while reading down, returns when scrolling up ----------
+    const nav = document.querySelector('.nav');
+    ScrollTrigger.create({
+      start: 0,
+      end: 'max',
+      onUpdate: (self) => nav.classList.toggle('is-hidden', self.direction === 1 && self.scroll() > window.innerHeight * 0.5),
+    });
+
+    // ---------- Order list: the rendered flacon follows the cursor ----------
+    if (!isMobile && scene?.getSnapshot()) {
+      const preview = document.createElement('img');
+      preview.className = 'order__preview';
+      preview.alt = '';
+      preview.src = scene.getSnapshot();
+      document.body.append(preview);
+      const px = gsap.quickTo(preview, 'x', { duration: 0.6, ease: 'power3.out' });
+      const py = gsap.quickTo(preview, 'y', { duration: 0.6, ease: 'power3.out' });
+      const sizes = [0.62, 0.78, 0.9, 1];
+      document.querySelectorAll('.order__row').forEach((row, i) => {
+        row.addEventListener('pointerenter', () => gsap.to(preview, { opacity: 1, scale: sizes[i], rotate: -3 + i * 2, duration: 0.5, ease: 'power3.out' }));
+        row.addEventListener('pointerleave', () => gsap.to(preview, { opacity: 0, scale: 0.6, duration: 0.4, ease: 'power2.in' }));
+        row.addEventListener('pointermove', (e) => { px(e.clientX + 40); py(e.clientY - 150); });
+      });
+    }
+
+    // ---------- Footer wordmark rises letter by letter ----------
+    const mark = document.querySelector('.footer__mark');
+    mark.innerHTML = [...mark.textContent].map((ch) => '<span>' + ch + '</span>').join('');
+    if (!reducedMotion) {
+      gsap.from(mark.children, {
+        yPercent: 100, duration: 1.4, stagger: 0.07, ease: 'expo.out',
+        scrollTrigger: { trigger: '.footer', start: 'top 85%' },
+      });
+    }
+
+    // ---------- Cursor: a ring that grows over links and names the action ----------
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.documentElement.classList.add('has-cursor');
+      const cursor = document.querySelector('.cursor');
+      const cursorLabel = cursor.querySelector('.cursor__label');
+      const cx = gsap.quickTo(cursor, 'x', { duration: 0.45, ease: 'power3.out' });
+      const cy = gsap.quickTo(cursor, 'y', { duration: 0.45, ease: 'power3.out' });
+      window.addEventListener('pointermove', (e) => {
+        cx(e.clientX);
+        cy(e.clientY);
+        cursor.classList.add('is-visible');
+      }, { passive: true });
+      document.documentElement.addEventListener('pointerleave', () => cursor.classList.remove('is-visible'));
+      document.addEventListener('pointerover', (e) => {
+        const target = e.target.closest('[data-cursor], a, button');
+        const text = target?.dataset.cursor || '';
+        cursor.classList.toggle('has-label', !!text);
+        cursor.classList.toggle('is-link', !!target && !text);
+        cursorLabel.textContent = text;
+      });
+      window.addEventListener('pointerdown', () => gsap.to(cursor, { scale: 0.82, duration: 0.2 }));
+      window.addEventListener('pointerup', () => gsap.to(cursor, { scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.5)' }));
+    }
+
+    // ---------- Bag ----------
+    const bagCount = document.querySelector('.bag-count');
+    let bag = 0;
+    function addToBag(labelEl, original, added = 'Added') {
+      bag += 1;
+      bagCount.textContent = bag;
+      labelEl.textContent = added;
+      setTimeout(() => { labelEl.textContent = original; }, 1600);
+    }
+    document.querySelectorAll('.order__row').forEach((row) => {
+      const add = row.querySelector('.order__add');
+      row.addEventListener('click', () => addToBag(add, 'Add'));
+    });
+    const sampleLabel = document.querySelector('.samples__add span');
+    document.querySelector('.samples__add').addEventListener('click', () => addToBag(sampleLabel, sampleLabel.textContent, 'Added to bag'));
+  </script>
+</body>
+</html>

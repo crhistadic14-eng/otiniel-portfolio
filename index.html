@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Otiniel B. · Websites made to be remembered</title>
+  <meta name="description" content="Otiniel B. is a designer and front-end developer in Portugal who builds landing pages and websites made to be remembered. Three works on show.">
+  <meta property="og:title" content="Otiniel B. · Websites made to be remembered">
+  <meta property="og:description" content="An exhibition of three websites, designed and built by hand.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/koen-1.jpg">
+  <meta name="theme-color" content="#ecebe6">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ecebe6'/%3E%3Crect x='14' y='12' width='36' height='40' fill='none' stroke='%23141414' stroke-width='5'/%3E%3Ccircle cx='48' cy='50' r='7' fill='%23d0312d'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/gallery.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js",
+      "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="lights" aria-hidden="true"></div>
+  <div class="light" aria-hidden="true"></div>
+  <div class="pointer" aria-hidden="true"><i></i><span></span></div>
+
+  <header class="header">
+    <a href="#entrance" class="header__name">Otiniel B.</a>
+    <span class="header__show">Exhibition · Websites as objects, 2026</span>
+    <div class="header__right">
+      <span class="header__open"><span class="red-dot"></span>Commissions open</span>
+      <a class="hire" href="https://www.upwork.com/freelancers/~012e33462dd547fd77" target="_blank" rel="noopener">Hire on Upwork ↗</a>
+    </div>
+  </header>
+
+  <nav class="plan" aria-label="Floor plan">
+    <small>Floor plan</small>
+    <button type="button" data-room="entrance" aria-label="Room 0, entrance">0</button>
+    <button type="button" data-room="room" aria-label="Room 1, three works">1</button>
+    <button type="button" data-room="about" aria-label="Room 2, about the artist">2</button>
+    <button type="button" data-room="commission" aria-label="Room 3, commissions">3</button>
+  </nav>
+
+  <main>
+    <!-- Room 0: the wall text at the entrance of the show -->
+    <section class="entrance" id="entrance" aria-label="Entrance">
+      <p class="entrance__room label" data-reveal>Room 0 · Entrance</p>
+      <h1 class="entrance__title" data-reveal>Otiniel B.</h1>
+      <p class="entrance__sub" data-reveal>Websites made to be remembered.</p>
+      <p class="entrance__text" data-reveal>Three websites, designed and built by hand. Each one starts from a single idea, finds its own typeface and colour, and ends with one moment the visitor keeps after closing the tab. Please walk through. Touching is encouraged.</p>
+      <div class="facts" data-reveal>
+        <p><span>Works</span>Three</p>
+        <p><span>Year</span>2026</p>
+        <p><span>Medium</span>HTML, CSS, JavaScript, WebGL</p>
+        <p><span>Admission</span>Free · scroll to enter →</p>
+      </div>
+    </section>
+
+    <!-- Room 1: one long wall, three framed works -->
+    <section class="room" id="room" aria-label="Three works">
+      <div class="wall">
+        <div class="wall__card">
+          <p class="label">Room 1</p>
+          <h2>Three works</h2>
+          <p>Each work opens in a new tab. Hold the cursor over a frame to see a second view.</p>
+        </div>
+
+        <article class="work">
+          <a class="work__frame" style="--w: 48vw" href="noctis/index.html" target="_blank" rel="noopener" data-cursor="Enter ↗" aria-label="Enter NOCTIS">
+            <div class="work__view">
+              <img src="assets/noctis-1.jpg" alt="NOCTIS opening: a pink glass perfume flacon in front of a giant black wordmark">
+              <img src="assets/noctis-2.jpg" alt="NOCTIS at 19:40: the flacon on a crimson background with the heart notes of the formula" loading="lazy">
+            </div>
+          </a>
+          <div class="plate">
+            <p class="plate__artist">Otiniel B. (Portugal)</p>
+            <p class="plate__title"><i>NOCTIS</i>, 2026</p>
+            <p class="plate__medium">HTML, CSS, JavaScript, Three.js</p>
+            <p class="plate__note">A website for a perfume house. The page grows darker as the evening goes on, and a glass flacon follows your cursor.</p>
+            <a class="plate__enter" href="noctis/index.html" target="_blank" rel="noopener">Enter the work ↗</a>
+            <span class="plate__num">No. 1 of 3 · Concept project</span>
+          </div>
+        </article>
+
+        <article class="work">
+          <a class="work__frame" style="--w: 42vw" href="synapse/index.html" target="_blank" rel="noopener" data-cursor="Enter ↗" aria-label="Enter Synapse">
+            <div class="work__view">
+              <img src="assets/synapse-1.jpg" alt="Synapse opening: a glowing network of neurons above the words Forty thousand papers, one night" loading="lazy">
+              <img src="assets/synapse-2.jpg" alt="Synapse story: inside the network, a subtitle reads By morning, it has one idea worth your time" loading="lazy">
+            </div>
+          </a>
+          <div class="plate">
+            <p class="plate__artist">Otiniel B. (Portugal)</p>
+            <p class="plate__title"><i>Synapse</i>, 2026</p>
+            <p class="plate__medium">HTML, CSS, JavaScript, GLSL shaders</p>
+            <p class="plate__note">An AI research assistant, directed like a film: a letterbox opening, a living network of neurons, and a story told in subtitles.</p>
+            <a class="plate__enter" href="synapse/index.html" target="_blank" rel="noopener">Enter the work ↗</a>
+            <span class="plate__num">No. 2 of 3 · Concept project</span>
+          </div>
+        </article>
+
+        <article class="work">
+          <a class="work__frame" style="--w: 48vw" href="koen/index.html" target="_blank" rel="noopener" data-cursor="Enter ↗" aria-label="Enter kōen">
+            <div class="work__view">
+              <img src="assets/koen-1.jpg" alt="kōen opening: a brush-painted ensō around a small framed photograph of a forest" loading="lazy">
+              <img src="assets/koen-2.jpg" alt="kōen park page: Fog Garden with a framed photograph and a vertical haiku" loading="lazy">
+            </div>
+          </a>
+          <div class="plate">
+            <p class="plate__artist">Otiniel B. (Portugal)</p>
+            <p class="plate__title"><i>kōen</i>, 2026</p>
+            <p class="plate__medium">HTML, CSS, JavaScript, SVG</p>
+            <p class="plate__note">A landscape studio in Tokyo and Lisbon. An ensō paints itself, photographs soak through like ink, and the site follows the season.</p>
+            <a class="plate__enter" href="koen/index.html" target="_blank" rel="noopener">Enter the work ↗</a>
+            <span class="plate__num">No. 3 of 3 · Concept project</span>
+          </div>
+        </article>
+
+        <div class="wall__card">
+          <p class="label">Exit</p>
+          <h2><a href="#about">About the artist →</a></h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room 2: artist's statement and method -->
+    <section class="about" id="about" aria-label="About the artist">
+      <div class="about__head" data-reveal>
+        <p class="label">Room 2</p>
+        <h2>Artist's statement</h2>
+      </div>
+      <div class="statement" data-reveal>
+        <p>I'm Otiniel, a designer and front-end developer in Odivelas, just outside Lisbon. I make landing pages and websites for brands that would rather be remembered than blend in.</p>
+        <p>My process is simple: <em>find the one idea</em> a page should leave behind, give it its own type, colour and words, then build it by hand so it loads fast and works on every phone. When a page needs to move, I use GSAP and Three.js. When it doesn't, I leave it still.</p>
+      </div>
+      <ol class="method">
+        <li data-reveal><span class="label">01</span><b>Brief</b><p>A short message or call: what you offer, who it is for, and what a visitor should remember.</p></li>
+        <li data-reveal><span class="label">02</span><b>Concept</b><p>One idea and its art direction, shown to you before a single line of code.</p></li>
+        <li data-reveal><span class="label">03</span><b>Build</b><p>Hand-written HTML, CSS and JavaScript, tested in real browsers and on phones.</p></li>
+        <li data-reveal><span class="label">04</span><b>Launch</b><p>Published, fast, and handed over so it is yours to keep.</p></li>
+      </ol>
+      <div class="offer" data-reveal>
+        <span>Landing pages</span>
+        <span>Websites for studios and brands</span>
+        <span>Redesigns</span>
+        <span>Interactive storytelling</span>
+        <span>Responsive fixes</span>
+      </div>
+    </section>
+
+    <!-- Room 3: commissions -->
+    <section class="commission" id="commission" aria-label="Commissions">
+      <p class="label" data-reveal>Room 3 · Commissions</p>
+      <h2 data-reveal>Commission a work.</h2>
+      <p data-reveal>I take a few projects at a time, so each one gets the same attention as the three on this wall. The quickest way to start is a message on Upwork.</p>
+      <div class="commission__actions" data-reveal>
+        <span class="sticker"><span class="red-dot"></span>Commissions open</span>
+        <a class="hire hire--big" href="https://www.upwork.com/freelancers/~012e33462dd547fd77" target="_blank" rel="noopener" data-cursor="Upwork ↗">Hire me on Upwork ↗</a>
+        <button type="button" class="copy">Copy profile link</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Exhibition open day and night · Portugal</span>
+    <span>All works are concept projects · © 2026 Otiniel B.</span>
+  </footer>
+
+  <!-- Failsafe: if scripts cannot load, turn the lights on anyway -->
+  <script>
+    setTimeout(function () {
+      if (window.__galleryReady) return;
+      var l = document.querySelector('.lights');
+      if (l) l.remove();
+    }, 6000);
+  </script>
+
+  <!-- Scripts are inline so the page also works when opened straight from disk -->
+  <script type="module">
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import Lenis from 'lenis';
+
+    window.__galleryReady = true;
+    gsap.registerPlugin(ScrollTrigger);
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const PROFILE = 'https://www.upwork.com/freelancers/~012e33462dd547fd77';
+
+    let lenis = null;
+    if (!reducedMotion) {
+      lenis = new Lenis({ lerp: 0.08 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+    const goTo = (el) => (lenis ? lenis.scrollTo(el, { duration: 1.8 }) : window.scrollTo({ top: el.offsetTop }));
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        goTo(target);
+      });
+    });
+
+    // ---------- Lights: two flickers, then the room is lit ----------
+    const lights = document.querySelector('.lights');
+    const enter = gsap.timeline({ paused: true })
+      .from('.entrance [data-reveal], .header > *', { opacity: 0, y: 30, duration: 1.2, stagger: 0.08, ease: 'power3.out' });
+    if (reducedMotion) { lights.remove(); enter.progress(1); }
+    else {
+      gsap.timeline({ delay: 0.5, onComplete: () => lights.remove() })
+        .to(lights, { opacity: 0.7, duration: 0.05 })
+        .to(lights, { opacity: 1, duration: 0.09 })
+        .to(lights, { opacity: 0.25, duration: 0.05 }, '+=0.12')
+        .to(lights, { opacity: 0.95, duration: 0.08 })
+        .to(lights, { opacity: 0, duration: 0.6, ease: 'power2.out' }, '+=0.1')
+        .add(() => enter.play(), '-=0.4');
+    }
+
+    // ---------- The visitor's light follows the cursor across the wall ----------
+    const lightEl = document.querySelector('.light');
+    if (matchMedia('(hover: hover)').matches && !reducedMotion) {
+      const pos = { x: window.innerWidth / 2, y: window.innerHeight * 0.4 };
+      const target = { ...pos };
+      window.addEventListener('pointermove', (e) => { target.x = e.clientX; target.y = e.clientY; }, { passive: true });
+      gsap.ticker.add(() => {
+        pos.x += (target.x - pos.x) * 0.08;
+        pos.y += (target.y - pos.y) * 0.08;
+        lightEl.style.setProperty('--lx', `${pos.x}px`);
+        lightEl.style.setProperty('--ly', `${pos.y}px`);
+      });
+    }
+
+    // ---------- Room 1: walking along the wall (desktop) ----------
+    const wall = document.querySelector('.wall');
+    const distance = () => Math.max(0, wall.scrollWidth - window.innerWidth);
+    const mm = gsap.matchMedia();
+    let roomRange = null;
+    mm.add('(min-width: 861px)', () => {
+      gsap.to(wall, {
+        x: () => -distance(),
+        ease: 'none',
+        scrollTrigger: { trigger: '.room', start: 'top top', end: () => '+=' + distance(), pin: true, scrub: 0.8, invalidateOnRefresh: true },
+      });
+      roomRange = () => distance();
+    });
+
+    // ---------- Reveals below the entrance ----------
+    if (!reducedMotion) {
+      gsap.utils.toArray('[data-reveal]').forEach((el) => {
+        if (el.closest('.entrance')) return;
+        gsap.from(el, { opacity: 0, y: 30, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+      });
+    }
+
+    // ---------- Floor plan: you are here ----------
+    const planBtns = document.querySelectorAll('.plan button');
+    planBtns.forEach((btn) => {
+      const room = document.getElementById(btn.dataset.room);
+      btn.addEventListener('click', () => goTo(room));
+      ScrollTrigger.create({
+        trigger: room,
+        start: 'top 55%',
+        end: () => (btn.dataset.room === 'room' && roomRange ? '+=' + (roomRange() + window.innerHeight) : 'bottom 55%'),
+        invalidateOnRefresh: true,
+        onToggle: (self) => { if (self.isActive) planBtns.forEach((b) => b.classList.toggle('is-here', b === btn)); },
+      });
+    });
+    planBtns[0].classList.add('is-here');
+
+    // ---------- Copy the profile link ----------
+    const copyBtn = document.querySelector('.copy');
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(PROFILE);
+        copyBtn.textContent = 'Copied ✓';
+      } catch {
+        copyBtn.textContent = PROFILE; // clipboard blocked: show it so it can be copied by hand
+      }
+      setTimeout(() => { copyBtn.textContent = 'Copy profile link'; }, 2400);
+    });
+
+    // ---------- Header steps aside while you look ----------
+    const header = document.querySelector('.header');
+    ScrollTrigger.create({
+      start: 0, end: 'max',
+      onUpdate: (self) => header.classList.toggle('is-hidden', self.direction === 1 && self.scroll() > window.innerHeight * 0.6),
+    });
+
+    // ---------- Cursor: a small square and a label like a museum tag ----------
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.documentElement.classList.add('has-cursor');
+      const ptr = document.querySelector('.pointer');
+      const tag = ptr.querySelector('span');
+      const px = gsap.quickTo(ptr, 'x', { duration: 0.2, ease: 'power3.out' });
+      const py = gsap.quickTo(ptr, 'y', { duration: 0.2, ease: 'power3.out' });
+      window.addEventListener('pointermove', (e) => { px(e.clientX); py(e.clientY); ptr.classList.add('is-visible'); }, { passive: true });
+      document.documentElement.addEventListener('pointerleave', () => ptr.classList.remove('is-visible'));
+      document.addEventListener('pointerover', (e) => {
+        const target = e.target.closest('[data-cursor], a, button');
+        const text = target?.dataset.cursor || '';
+        ptr.classList.toggle('has-label', !!text);
+        ptr.classList.toggle('is-link', !!target);
+        tag.textContent = text;
+      });
+    }
+  </script>
+</body>
+</html>

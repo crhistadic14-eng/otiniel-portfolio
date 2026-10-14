@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Synapse · Forty thousand papers, one night</title>
+  <meta name="description" content="Synapse reads everything published in your field overnight and proposes one experiment by morning. Concept project by Otiniel B.">
+  <meta property="og:title" content="Synapse · Forty thousand papers. One night.">
+  <meta property="og:description" content="An AI research assistant for wet labs.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#07070a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2307070a'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23ffb366'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200..500;1,200..400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js",
+      "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.mjs"
+    }
+  }
+  </script>
+</head>
+<body class="is-opening">
+  <div class="letterbox letterbox--top" aria-hidden="true"></div>
+  <div class="letterbox letterbox--bottom" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="pointer" aria-hidden="true"><span></span></div>
+  <canvas class="network" aria-hidden="true"></canvas>
+
+  <header class="header">
+    <a href="#" class="header__logo">SYNAPSE</a>
+    <div class="header__right">
+      <span class="header__clock">Lab 4 · <span class="clock">00:00</span></span>
+      <a href="#access" class="ghost" data-cursor="Join">Request access</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="opening">
+      <p class="opening__kicker label">Synapse · research preview</p>
+      <h1 class="opening__title">Forty thousand papers. <em>One night.</em></h1>
+      <p class="opening__sub">An AI research assistant for wet labs. It reads everything published in your field overnight and proposes one experiment by morning.</p>
+      <a href="#story" class="ghost">Watch the night <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <!-- The camera flies into the network while the story plays as subtitles -->
+    <section class="story" id="story" aria-label="How Synapse works">
+      <div class="story__sticky">
+        <div class="subtitle is-active"><time>23:02</time><p>Tonight, 41,286 new papers will be published in the life sciences.</p></div>
+        <div class="subtitle"><time>01:15</time><p>No one in your lab will read them. Nobody could.</p></div>
+        <div class="subtitle"><time>03:40</time><p>Synapse reads every one, and checks each claim against your own data.</p></div>
+        <div class="subtitle"><time>05:58</time><p>By morning, it has one idea worth your time.</p></div>
+        <div class="story__progress" aria-hidden="true"><i class="is-on"></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section class="credits" aria-label="The log of one night">
+      <div class="credits__head">
+        <p class="label">The log · Lab 4, structural biology</p>
+        <h2>What happened while they slept.</h2>
+      </div>
+      <ol class="credits__list">
+        <li><time>23:02</time><span>Started. 312 new documents in structural biology since six.</span></li>
+        <li><time>23:47</time><span>Read a new preprint on TMEM16 scramblase structure. Relevant to aim 2.</span></li>
+        <li><time>00:31</time><span>Skipped 41 papers that only restate older results.</span></li>
+        <li><time>01:15</time><span>Found a contradiction: their binding pocket does not match the lab's mutant data from March.</span></li>
+        <li><time>03:40</time><span>Two older studies explain the gap. Both ran the assay at 4 °C. The lab ran it at 22 °C.</span></li>
+        <li><time>05:58</time><span class="amber">Proposal ready.</span></li>
+      </ol>
+    </section>
+
+    <section class="proposal" aria-label="The proposal">
+      <div class="proposal__intro">
+        <p class="label">The morning after</p>
+        <h2>One proposal. Not a summary.</h2>
+      </div>
+      <article class="card">
+        <div class="card__top label"><span><span class="card__dot"></span>Proposal B-7</span><span>Ready 05:58</span></div>
+        <h3>Repeat assay B-7 at 4 °C.</h3>
+        <p class="card__why">Your mutant data and the new structure disagree only at room temperature. Two older studies saw the same pocket close at 4 °C. If it closes for you too, the contradiction disappears and aim 2 gets a lot simpler.</p>
+        <div class="card__facts">
+          <div><span class="label">Time</span><strong>2 days</strong></div>
+          <div><span class="label">Reagents</span><strong>€340</strong></div>
+          <div><span class="label">Confidence</span><strong>0.71</strong></div>
+        </div>
+        <ul class="card__sources">
+          <li>Structural study, 2019 · assay at 4 °C</li>
+          <li>Binding kinetics, 2021 · assay at 4 °C</li>
+          <li>New preprint, October 2026 · assay at 22 °C</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="pricing" aria-label="Pricing">
+      <p class="label">Pricing</p>
+      <h2>Priced per lab, not per seat.</h2>
+      <div class="switch" role="group" aria-label="Billing period">
+        <button type="button" aria-pressed="true" data-period="month">Monthly</button>
+        <button type="button" aria-pressed="false" data-period="year">Yearly · 2 months free</button>
+      </div>
+      <div class="plans">
+        <div class="plan plan--lit">
+          <h3>Lab</h3>
+          <p class="plan__price"><span class="price" data-month="480" data-year="400">€480</span><small>/ month</small></p>
+          <p>Up to 12 researchers. A nightly run on your field. Your data never leaves your workspace.</p>
+          <a href="#access" class="ghost" data-cursor="Apply">Request access</a>
+        </div>
+        <div class="plan">
+          <h3>Institute</h3>
+          <p class="plan__price">Custom</p>
+          <p>Every lab in the building, on your own servers, with a research engineer you can call.</p>
+          <a href="#access" class="ghost">Talk to us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="access" id="access" aria-label="Request access">
+      <p class="label">Early access</p>
+      <h2>Five labs <em>a month.</em></h2>
+      <form class="access__form" novalidate>
+        <label class="sr-only" for="email">Work email</label>
+        <input id="email" type="email" placeholder="Your work email" required>
+        <button type="submit" data-cursor="Send">Request →</button>
+      </form>
+      <p class="access__note" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Synapse · concept project</span>
+    <span>Design and development by Otiniel B.</span>
+  </footer>
+
+  <!-- Failsafe: if the scripts cannot load, open the letterbox and show the page anyway -->
+  <script>
+    setTimeout(function () {
+      if (window.__synapseReady) return;
+      document.body.classList.remove('is-opening');
+      document.querySelectorAll('.letterbox').forEach(function (b) { b.style.height = '0'; });
+    }, 12000);
+  </script>
+
+  <!-- Scripts are inline so the page also works when opened straight from disk -->
+  <script type="module">
+    import * as THREE from 'three';
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import Lenis from 'lenis';
+
+    window.__synapseReady = true;
+    gsap.registerPlugin(ScrollTrigger);
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = matchMedia('(max-width: 767px), (hover: none)').matches;
+
+    // =====================================================================
+    // A glowing 3D network of neurons. They light up where the cursor
+    // passes, and the signal travels along their connections.
+    // =====================================================================
+    function createNetwork(canvas) {
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setClearColor('#07070a');
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0, 9);
+      const group = new THREE.Group();
+      group.position.y = 0.7; // sits above the title in the opening
+      scene.add(group);
+
+      const gauss = () => Math.sqrt(-2 * Math.log(Math.random() + 1e-9)) * Math.cos(2 * Math.PI * Math.random());
+
+      // ---- Neurons, grouped in lobes inside an ellipsoid ----
+      const N = isMobile ? 700 : 1500;
+      const lobes = [];
+      while (lobes.length < 14) {
+        const p = new THREE.Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
+        if (p.lengthSq() < 1) lobes.push(p.multiply(new THREE.Vector3(3.4, 2.1, 2.3)));
+      }
+      const pos = new Float32Array(N * 3);
+      const seed = new Float32Array(N);
+      const act = new Float32Array(N);
+      const next = new Float32Array(N);
+      for (let i = 0; i < N; i++) {
+        const c = lobes[i % lobes.length];
+        pos[i * 3] = c.x + gauss() * 0.62;
+        pos[i * 3 + 1] = c.y + gauss() * 0.62;
+        pos[i * 3 + 2] = c.z + gauss() * 0.62;
+        seed[i] = Math.random();
+      }
+
+      // ---- Connections: each neuron to its nearest neighbours, plus a few long axons ----
+      const edges = [];
+      const seen = new Set();
+      const link = (a, b) => {
+        const key = a < b ? a * N + b : b * N + a;
+        if (a !== b && !seen.has(key)) { seen.add(key); edges.push(a, b); }
+      };
+      for (let i = 0; i < N; i++) {
+        const near = [];
+        for (let j = 0; j < N; j++) {
+          if (j === i) continue;
+          const dx = pos[i * 3] - pos[j * 3], dy = pos[i * 3 + 1] - pos[j * 3 + 1], dz = pos[i * 3 + 2] - pos[j * 3 + 2];
+          const d = dx * dx + dy * dy + dz * dz;
+          if (d < 0.64) near.push([d, j]);
+        }
+        near.sort((a, b) => a[0] - b[0]);
+        for (let k = 0; k < Math.min(3, near.length); k++) link(i, near[k][1]);
+      }
+      for (let k = 0; k < 70; k++) link((Math.random() * N) | 0, (Math.random() * N) | 0);
+      const E = edges.length / 2;
+
+      // ---- Points ----
+      const pointGeo = new THREE.BufferGeometry();
+      pointGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      pointGeo.setAttribute('act', new THREE.BufferAttribute(act, 1));
+      pointGeo.setAttribute('seed', new THREE.BufferAttribute(seed, 1));
+      const uniforms = { uTime: { value: 0 }, uPixelRatio: { value: renderer.getPixelRatio() } };
+      const points = new THREE.Points(pointGeo, new THREE.ShaderMaterial({
+        uniforms,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        vertexShader: `
+          attribute float act; attribute float seed;
+          uniform float uTime; uniform float uPixelRatio;
+          varying float vAct; varying float vDepth;
+          void main() {
+            vAct = act;
+            vec4 mv = modelViewMatrix * vec4(position, 1.0);
+            vDepth = smoothstep(16.0, 2.0, -mv.z);
+            gl_Position = projectionMatrix * mv;
+            float size = 3.2 + act * 9.0 + sin(uTime * 1.4 + seed * 6.283) * 0.6;
+            gl_PointSize = size * uPixelRatio * (16.0 / -mv.z);
+          }`,
+        fragmentShader: `
+          varying float vAct; varying float vDepth;
+          void main() {
+            float d = length(gl_PointCoord - 0.5);
+            // A bright core and a soft halo: the glow is drawn per neuron, no post-processing.
+            float core = exp(-d * d * 60.0);
+            float halo = exp(-d * d * 9.0) * (0.12 + vAct * 0.5);
+            vec3 cold = vec3(0.7, 0.66, 0.6);
+            vec3 hot = vec3(1.0, 0.68, 0.38);
+            vec3 c = mix(cold, hot * 1.4, vAct);
+            float a = (core * (0.45 + vAct * 0.55) + halo) * (0.3 + vDepth * 0.7);
+            gl_FragColor = vec4(c, a);
+          }`,
+      }));
+      group.add(points);
+
+      // ---- Lines ----
+      const linePos = new Float32Array(E * 6);
+      const lineAct = new Float32Array(E * 2);
+      for (let e = 0; e < E; e++) {
+        const a = edges[e * 2], b = edges[e * 2 + 1];
+        linePos.set(pos.subarray(a * 3, a * 3 + 3), e * 6);
+        linePos.set(pos.subarray(b * 3, b * 3 + 3), e * 6 + 3);
+      }
+      const lineGeo = new THREE.BufferGeometry();
+      lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
+      lineGeo.setAttribute('act', new THREE.BufferAttribute(lineAct, 1));
+      const lines = new THREE.LineSegments(lineGeo, new THREE.ShaderMaterial({
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+        vertexShader: `
+          attribute float act; varying float vAct; varying float vDepth;
+          void main() {
+            vAct = act;
+            vec4 mv = modelViewMatrix * vec4(position, 1.0);
+            vDepth = smoothstep(16.0, 2.0, -mv.z);
+            gl_Position = projectionMatrix * mv;
+          }`,
+        fragmentShader: `
+          varying float vAct; varying float vDepth;
+          void main() {
+            vec3 c = mix(vec3(0.5, 0.46, 0.42) * 0.3, vec3(1.0, 0.62, 0.32) * 1.1, vAct);
+            gl_FragColor = vec4(c, (0.06 + vAct * 0.85) * (0.3 + vDepth * 0.7));
+          }`,
+      }));
+      group.add(lines);
+
+      // ---- State ----
+      const pointer = { x: -9999, y: -9999, nx: 0, ny: 0, sx: 0, sy: 0 };
+      let level = 0.15; // how busy the network is
+      let fly = 0;      // 0 = outside the network, 1 = deep inside
+      const v = new THREE.Vector3();
+      const clock = new THREE.Clock();
+      let frameNo = 0;
+
+      function tick() {
+        requestAnimationFrame(tick);
+        const dt = Math.min(clock.getDelta(), 0.05);
+        const t = clock.elapsedTime;
+        uniforms.uTime.value = t;
+        frameNo++;
+
+        pointer.sx += (pointer.nx - pointer.sx) * 0.05;
+        pointer.sy += (pointer.ny - pointer.sy) * 0.05;
+        if (!reducedMotion) group.rotation.y += dt * 0.05;
+        group.rotation.x = pointer.sy * 0.18;
+        camera.position.x = pointer.sx * 0.5;
+        camera.position.z = 9 - fly * 6.4;
+        camera.lookAt(0, 0, 0);
+
+        // Spontaneous firing, busier as the story goes on.
+        if (!reducedMotion && Math.random() < level * 0.5) act[(Math.random() * N) | 0] = 1;
+
+        // The cursor lights up the neurons under it.
+        if (pointer.x > -999 && frameNo % 2 === 0) {
+          group.updateMatrixWorld();
+          const W = window.innerWidth, H = window.innerHeight;
+          for (let i = 0; i < N; i++) {
+            v.fromArray(pos, i * 3).applyMatrix4(group.matrixWorld).project(camera);
+            if (v.z > 1) continue;
+            const dx = (v.x * 0.5 + 0.5) * W - pointer.x;
+            const dy = (-v.y * 0.5 + 0.5) * H - pointer.y;
+            if (dx * dx + dy * dy < 4900) act[i] = 1;
+          }
+        }
+
+        // Signals travel along the connections, then fade.
+        next.fill(0);
+        for (let e = 0; e < E; e++) {
+          const a = edges[e * 2], b = edges[e * 2 + 1];
+          if (act[a] > 0.35 && Math.random() < 0.07) next[b] = Math.max(next[b], act[a] * 0.88);
+          if (act[b] > 0.35 && Math.random() < 0.07) next[a] = Math.max(next[a], act[b] * 0.88);
+        }
+        for (let i = 0; i < N; i++) act[i] = Math.max(act[i] * 0.955, next[i]);
+        for (let e = 0; e < E; e++) {
+          lineAct[e * 2] = act[edges[e * 2]];
+          lineAct[e * 2 + 1] = act[edges[e * 2 + 1]];
+        }
+        pointGeo.attributes.act.needsUpdate = true;
+        lineGeo.attributes.act.needsUpdate = true;
+
+        renderer.render(scene, camera);
+      }
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+      window.addEventListener('pointermove', (e) => {
+        pointer.x = e.clientX;
+        pointer.y = e.clientY;
+        pointer.nx = (e.clientX / window.innerWidth) * 2 - 1;
+        pointer.ny = (e.clientY / window.innerHeight) * 2 - 1;
+      }, { passive: true });
+      document.documentElement.addEventListener('pointerleave', () => { pointer.x = pointer.y = -9999; });
+
+      tick();
+      return {
+        setLevel: (l) => { level = l; },
+        setFly: (f) => { fly = f; },
+      };
+    }
+
+    // =====================================================================
+    // Page
+    // =====================================================================
+    let lenis = null;
+    if (!reducedMotion) {
+      lenis = new Lenis({ lerp: 0.08 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+      lenis.stop();
+    }
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        const target = id.length > 1 ? document.querySelector(id) : 0;
+        if (target === null) return;
+        e.preventDefault();
+        if (lenis) lenis.scrollTo(target, { duration: 2 });
+        else window.scrollTo({ top: target ? target.offsetTop : 0 });
+      });
+    });
+
+    let network = null;
+    try { network = createNetwork(document.querySelector('.network')); }
+    catch (err) { console.warn('WebGL unavailable', err); }
+
+    // ---------- Opening: the letterbox opens on the scene ----------
+    gsap.set('.header, .opening > *', { opacity: 0 });
+    gsap.timeline({ delay: 0.4 })
+      .to('.letterbox', { height: '11vh', duration: 2, ease: 'expo.inOut' })
+      .to('.header', { opacity: 1, duration: 1.2 }, '-=0.6')
+      .fromTo('.opening > *', { opacity: 0, y: 24, filter: 'blur(10px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.6, stagger: 0.14, ease: 'power3.out' }, '-=1')
+      .add(() => {
+        document.body.classList.remove('is-opening');
+        lenis?.start();
+        // The bars slide away as soon as you start to scroll.
+        gsap.fromTo('.letterbox', { height: '11vh' }, {
+          height: 0, ease: 'none', immediateRender: false,
+          scrollTrigger: { trigger: '.opening', start: 'top top', end: '50% top', scrub: true },
+        });
+        ScrollTrigger.refresh();
+      });
+
+    gsap.to('.opening > *', {
+      opacity: 0, y: -40, ease: 'none',
+      scrollTrigger: { trigger: '.opening', start: '10% top', end: '70% top', scrub: true },
+    });
+
+    // ---------- Live clock in the header ----------
+    const clockEl = document.querySelector('.clock');
+    const tickClock = () => {
+      const d = new Date();
+      clockEl.textContent = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+    };
+    tickClock();
+    setInterval(tickClock, 15000);
+
+    // ---------- Story: fly into the network, subtitles change ----------
+    ScrollTrigger.create({
+      start: 0,
+      endTrigger: '.story',
+      end: 'bottom bottom',
+      onUpdate: (self) => network?.setFly(self.progress),
+    });
+    const subs = document.querySelectorAll('.subtitle');
+    const ticks = document.querySelectorAll('.story__progress i');
+    let line = 0;
+    ScrollTrigger.create({
+      trigger: '.story',
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        const i = Math.min(3, Math.floor(self.progress * 4));
+        if (i === line) return;
+        line = i;
+        subs.forEach((s, k) => s.classList.toggle('is-active', k === i));
+        ticks.forEach((tk, k) => tk.classList.toggle('is-on', k <= i));
+        network?.setLevel(0.15 + i * 0.28);
+      },
+      onLeaveBack: () => network?.setLevel(0.15),
+    });
+
+    // The network dims behind the reading sections.
+    ScrollTrigger.create({
+      trigger: '.credits',
+      start: 'top 70%',
+      onEnter: () => { document.querySelector('.network').style.opacity = 0.35; network?.setLevel(0.25); },
+      onLeaveBack: () => { document.querySelector('.network').style.opacity = 1; },
+    });
+
+    // ---------- Reveals ----------
+    if (!reducedMotion) {
+      gsap.utils.toArray('.credits__head, .proposal__intro, .pricing h2, .access h2').forEach((el) => {
+        gsap.from(el, { opacity: 0, y: 40, filter: 'blur(8px)', duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+      });
+      gsap.utils.toArray('.credits__list li').forEach((li) => {
+        gsap.from(li, { opacity: 0, y: 30, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: li, start: 'top 88%' } });
+      });
+      gsap.from('.card', { opacity: 0, y: 90, rotateX: 18, duration: 1.8, ease: 'expo.out', scrollTrigger: { trigger: '.card', start: 'top 85%' } });
+      gsap.from('.plan', { opacity: 0, y: 40, duration: 1.2, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: '.plans', start: 'top 85%' } });
+    }
+
+    // ---------- The proposal card tilts toward the cursor ----------
+    const card = document.querySelector('.card');
+    if (!isMobile) {
+      document.querySelector('.proposal').addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(card, { rotateY: x * 10, rotateX: -y * 8, duration: 0.8, ease: 'power3.out' });
+      });
+      document.querySelector('.proposal').addEventListener('pointerleave', () => {
+        gsap.to(card, { rotateY: 0, rotateX: 0, duration: 1.2, ease: 'power3.out' });
+      });
+    }
+
+    // ---------- Pricing switch ----------
+    document.querySelectorAll('.switch button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.switch button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        document.querySelectorAll('.price').forEach((el) => {
+          const to = Number(el.dataset[btn.dataset.period]);
+          const n = { v: Number(el.textContent.replace(/\D/g, '')) };
+          gsap.to(n, { v: to, duration: 0.6, ease: 'power2.out', onUpdate: () => { el.textContent = '€' + Math.round(n.v); } });
+        });
+      });
+    });
+
+    // ---------- Access form ----------
+    const form = document.querySelector('.access__form');
+    const note = document.querySelector('.access__note');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input');
+      if (!email.value || !email.checkValidity()) {
+        note.classList.remove('is-ok');
+        note.textContent = 'That email does not look right.';
+        return;
+      }
+      note.classList.add('is-ok');
+      note.textContent = 'Thank you. We read every request and reply within a week.';
+      form.reset();
+    });
+
+    // ---------- Header hides while reading down ----------
+    const header = document.querySelector('.header');
+    ScrollTrigger.create({
+      start: 0,
+      end: 'max',
+      onUpdate: (self) => header.classList.toggle('is-hidden', self.direction === 1 && self.scroll() > window.innerHeight * 0.6),
+    });
+
+    // ---------- Cursor: a small light with a warm halo ----------
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      document.documentElement.classList.add('has-cursor');
+      const glow = document.querySelector('.glow');
+      const ptr = document.querySelector('.pointer');
+      const ptrLabel = ptr.querySelector('span');
+      const gx = gsap.quickTo(glow, 'x', { duration: 1.1, ease: 'power3.out' });
+      const gy = gsap.quickTo(glow, 'y', { duration: 1.1, ease: 'power3.out' });
+      const px = gsap.quickTo(ptr, 'x', { duration: 0.25, ease: 'power3.out' });
+      const py = gsap.quickTo(ptr, 'y', { duration: 0.25, ease: 'power3.out' });
+      window.addEventListener('pointermove', (e) => {
+        gx(e.clientX); gy(e.clientY); px(e.clientX); py(e.clientY);
+        glow.classList.add('is-visible'); ptr.classList.add('is-visible');
+      }, { passive: true });
+      document.documentElement.addEventListener('pointerleave', () => { glow.classList.remove('is-visible'); ptr.classList.remove('is-visible'); });
+      document.addEventListener('pointerover', (e) => {
+        const target = e.target.closest('[data-cursor], a, button, input');
+        const text = target?.dataset.cursor || '';
+        ptr.classList.toggle('has-label', !!text);
+        ptr.classList.toggle('is-link', !!target && !text);
+        ptrLabel.textContent = text;
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en" data-season="autumn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kōen · parks for cities that forgot how to breathe</title>
+  <meta name="description" content="kōen is a small landscape architecture studio in Tokyo and Lisbon. Concept project by Otiniel B.">
+  <meta property="og:title" content="kōen · landscape architecture, Tokyo and Lisbon">
+  <meta property="og:description" content="Parks for cities that forgot how to breathe.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f0ece4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23b5352b'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23f0ece4' stroke-width='5'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Ink masks only apply once scripts run; if they never load, photos stay visible.
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.__koenReady) document.documentElement.classList.remove('js'); }, 8000);
+  </script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/ScrollTrigger.js",
+      "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="drop" aria-hidden="true"></div>
+  <div class="ring" aria-hidden="true"><span></span></div>
+  <canvas class="season-fall" aria-hidden="true"></canvas>
+
+  <header class="header">
+    <a href="#top" class="header__logo">kōen</a>
+    <nav class="header__nav" aria-label="Main">
+      <a href="#parks" data-i18n="nav.parks">Parks</a>
+      <a href="#ways" data-i18n="nav.ways">Ways</a>
+      <a href="#studio" data-i18n="nav.studio">Studio</a>
+      <a href="#write" data-i18n="nav.write">Write to us</a>
+    </nav>
+    <div class="header__tools">
+      <div class="seasons" role="group" aria-label="Season">
+        <button type="button" data-season="spring" aria-pressed="false" title="Spring">春</button>
+        <button type="button" data-season="summer" aria-pressed="false" title="Summer">夏</button>
+        <button type="button" data-season="autumn" aria-pressed="true" title="Autumn">秋</button>
+        <button type="button" data-season="winter" aria-pressed="false" title="Winter">冬</button>
+      </div>
+      <button type="button" class="lang" aria-label="Switch language between English and Japanese"><b>EN</b> / 日本語</button>
+    </div>
+  </header>
+
+  <ol class="index" aria-label="Sections">
+    <li><button type="button" data-target="top" aria-label="Start">序</button></li>
+    <li><button type="button" data-target="parks" aria-label="Parks">園</button></li>
+    <li><button type="button" data-target="ways" aria-label="How we work">道</button></li>
+    <li><button type="button" data-target="studio" aria-label="Studio">室</button></li>
+    <li><button type="button" data-target="write" aria-label="Write to us">文</button></li>
+  </ol>
+
+  <main>
+    <section class="hero" id="top" aria-label="kōen">
+      <svg class="enso" viewBox="0 0 600 600" aria-hidden="true">
+        <defs>
+          <filter id="brush" x="-10%" y="-10%" width="120%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7" result="grain"/>
+            <feDisplacementMap in="SourceGraphic" in2="grain" scale="6"/>
+          </filter>
+          <mask id="enso-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="600">
+            <path class="enso__reveal" pathLength="1" fill="none" stroke="#fff" stroke-width="80" stroke-linecap="round"/>
+          </mask>
+        </defs>
+        <g mask="url(#enso-mask)">
+          <g class="enso__ink" filter="url(#brush)"></g>
+        </g>
+      </svg>
+      <figure class="hero__frame">
+        <img class="photo ink" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=700&q=80" alt="A path through a quiet forest">
+      </figure>
+      <h1 class="hero__kanji mincho vertical" aria-label="kōen, park">公園</h1>
+      <p class="hero__line mincho" data-reveal data-i18n="hero.line">Parks for cities that forgot how to breathe.</p>
+      <p class="hero__season tiny" data-reveal></p>
+    </section>
+
+    <section class="statement" aria-label="About">
+      <p class="mincho" data-reveal data-i18n="statement">We are a small studio in Tokyo and Lisbon. We design parks the way gardeners do: slowly, by watching where people walk and where the shade falls in August.</p>
+      <span class="seal" aria-hidden="true" data-reveal>公<br>園</span>
+    </section>
+
+    <section class="parks" id="parks" aria-label="Four parks">
+      <div class="section-title">
+        <h2 class="vertical mincho">四つの公園</h2>
+        <p data-i18n="parks.sub">Four parks<br>2022 to 2024</p>
+      </div>
+
+      <article class="spread">
+        <figure class="spread__frame" data-cursor="view">
+          <div class="spread__media"><img class="photo ink" src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=900&q=80" alt="Low sun between tall cypress trees" loading="lazy"></div>
+          <figcaption class="spread__caption tiny"><span data-i18n="cap1">Tokyo</span><span>2024</span></figcaption>
+        </figure>
+        <div class="spread__text" data-reveal>
+          <p class="spread__num">一</p>
+          <h3 class="spread__name">Hinoki Walk <span class="spread__jp">檜の道</span></h3>
+          <p class="spread__meta tiny" data-i18n="p1.meta">Tokyo · 3.1 hectares · 1,240 trees</p>
+          <p class="spread__story" data-i18n="p1.story">A former freight yard turned into a cypress walk. We kept the rails and let moss grow between them.</p>
+          <figure class="haiku">
+            <p class="haiku__jp vertical" lang="ja">閑かさや<br>岩にしみ入る<br>蝉の声</p>
+            <figcaption><span class="haiku__en">Such stillness. The cicadas' cry soaks into the rocks.<span>Bashō</span></span><span class="haiku__by-ja">松尾芭蕉</span></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="spread">
+        <figure class="spread__frame" data-cursor="view">
+          <div class="spread__media"><img class="photo ink" src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80" alt="A forest in morning fog" loading="lazy"></div>
+          <figcaption class="spread__caption tiny"><span data-i18n="cap2">Sapporo</span><span>2022</span></figcaption>
+        </figure>
+        <div class="spread__text" data-reveal>
+          <p class="spread__num">二</p>
+          <h3 class="spread__name">Fog Garden <span class="spread__jp">霧の庭</span></h3>
+          <p class="spread__meta tiny" data-i18n="p2.meta">Sapporo · 1.4 hectares · 420 trees</p>
+          <p class="spread__story" data-i18n="p2.story">A small garden that waters itself from the morning fog, using nets borrowed from fishing boats.</p>
+          <figure class="haiku">
+            <p class="haiku__jp vertical" lang="ja">霧しぐれ<br>富士をみぬ日ぞ<br>面白き</p>
+            <figcaption><span class="haiku__en">Misty rain. A day we cannot see Mount Fuji, and still a good one.<span>Bashō</span></span><span class="haiku__by-ja">松尾芭蕉</span></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="spread">
+        <figure class="spread__frame" data-cursor="view">
+          <div class="spread__media"><img class="photo ink" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80" alt="A green valley under evening clouds" loading="lazy"></div>
+          <figcaption class="spread__caption tiny"><span data-i18n="cap3">Lisbon</span><span>2022</span></figcaption>
+        </figure>
+        <div class="spread__text" data-reveal>
+          <p class="spread__num">三</p>
+          <h3 class="spread__name">Tejo Banks <span class="spread__jp">テージョの岸</span></h3>
+          <p class="spread__meta tiny" data-i18n="p3.meta">Lisbon · 5.6 hectares · 2,150 trees</p>
+          <p class="spread__story" data-i18n="p3.story">Five kilometres of riverbank given back to the city. Cork oaks, stone pines and benches that face the water.</p>
+          <figure class="haiku">
+            <p class="haiku__jp vertical" lang="ja">春の海<br>終日のたり<br>のたりかな</p>
+            <figcaption><span class="haiku__en">The spring sea, rising and falling, rising and falling all day.<span>Buson</span></span><span class="haiku__by-ja">与謝蕪村</span></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="spread">
+        <figure class="spread__frame" data-cursor="view">
+          <div class="spread__media"><img class="photo ink" src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=900&q=80" alt="Soft green hills" loading="lazy"></div>
+          <figcaption class="spread__caption tiny"><span data-i18n="cap4">Osaka</span><span>2023</span></figcaption>
+        </figure>
+        <div class="spread__text" data-reveal>
+          <p class="spread__num">四</p>
+          <h3 class="spread__name">Kawa Meadows <span class="spread__jp">川の原</span></h3>
+          <p class="spread__meta tiny" data-i18n="p4.meta">Osaka · 7.8 hectares · 3,800 trees</p>
+          <p class="spread__story" data-i18n="p4.story">Meadows that flood on purpose. When the river rises, the park takes the water so the streets do not.</p>
+          <figure class="haiku">
+            <p class="haiku__jp vertical" lang="ja">五月雨を<br>あつめて早し<br>最上川</p>
+            <figcaption><span class="haiku__en">Gathering the rains of May, how fast it runs, the Mogami river.<span>Bashō</span></span><span class="haiku__by-ja">松尾芭蕉</span></figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section class="rules" id="ways" aria-label="How we work">
+      <div class="section-title" style="margin-bottom:0">
+        <h2 class="vertical mincho">仕事の仕方</h2>
+        <p data-i18n="ways.sub">How we<br>work</p>
+      </div>
+      <ol class="rules__list">
+        <li data-reveal><span class="rules__num">一</span><div><h3 data-i18n="r1.h">Plant first, pave later.</h3><p data-i18n="r1.p">We draw the trees before the paths, then wait a season to see where the grass wears thin.</p></div></li>
+        <li data-reveal><span class="rules__num">二</span><div><h3 data-i18n="r2.h">Shade is infrastructure.</h3><p data-i18n="r2.p">Every park we build reaches at least 40% shade by its tenth summer.</p></div></li>
+        <li data-reveal><span class="rules__num">三</span><div><h3 data-i18n="r3.h">Benches face the trees.</h3><p data-i18n="r3.p">Not the road, not the screen on the building opposite. People stay longer when something alive is in front of them.</p></div></li>
+        <li data-reveal><span class="rules__num">四</span><div><h3 data-i18n="r4.h">The edges grow wild.</h3><p data-i18n="r4.p">The middle can be tidy. The edges belong to tall grass, insects and the occasional fox.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="studio" id="studio" aria-label="Studio">
+      <p class="tiny" data-reveal data-i18n="studio.k">The studio</p>
+      <h2 data-reveal data-i18n="studio.h">Two rooms, nine thousand kilometres apart.</h2>
+      <div class="cities" data-reveal>
+        <div><span class="city__time" data-tz="Asia/Tokyo">00<span>:</span>00</span><span class="tiny" data-i18n="city1">Tokyo · Kiyosumi</span></div>
+        <div><span class="city__time" data-tz="Europe/Lisbon">00<span>:</span>00</span><span class="tiny" data-i18n="city2">Lisbon · Alfama</span></div>
+      </div>
+      <p class="studio__text" data-reveal data-i18n="studio.p">Half of us work in an old rice warehouse by the Sumida river, the other half above a bakery in Alfama. The drawings travel overnight, so somebody is always awake to keep them moving.</p>
+    </section>
+
+    <section class="contact" id="write" aria-label="Write to us">
+      <p class="tiny" data-reveal data-i18n="write.k">Write to us</p>
+      <h2 data-reveal data-i18n="write.h">Tell us about your place.</h2>
+      <form class="letter" novalidate data-reveal>
+        <div class="kinds" role="group" aria-label="Kind of place">
+          <button type="button" class="kind" aria-pressed="true" data-kind="park" data-ja="公園">公園 <span>Park</span></button>
+          <button type="button" class="kind" aria-pressed="false" data-kind="courtyard" data-ja="中庭">中庭 <span>Courtyard</span></button>
+          <button type="button" class="kind" aria-pressed="false" data-kind="rooftop" data-ja="屋上">屋上 <span>Rooftop</span></button>
+          <button type="button" class="kind" aria-pressed="false" data-kind="riverside" data-ja="川辺">川辺 <span>Riverside</span></button>
+        </div>
+        <label class="sr-only" for="where">Where is it, and how big?</label>
+        <input id="where" type="text" placeholder="Where is it, and how big?" data-i18n-ph="ph.where">
+        <label class="sr-only" for="email">Your email</label>
+        <input id="email" type="email" placeholder="Your email" required data-i18n-ph="ph.email" aria-describedby="email-error">
+        <p class="field-error" id="email-error" aria-live="polite"></p>
+        <button type="submit" class="letter__send" data-cursor="send"><span data-i18n="send">Seal and send</span><span class="seal" aria-hidden="true">送</span></button>
+        <p class="letter__note" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <div class="viewer" role="dialog" aria-modal="true" aria-label="Park" hidden>
+    <button type="button" class="viewer__close tiny" data-cursor="close">閉じる · Close ✕</button>
+    <figure class="viewer__frame"><div class="viewer__media"><img class="photo ink" alt=""></div></figure>
+    <div class="viewer__text">
+      <p class="viewer__num"></p>
+      <h3 class="viewer__name"></h3>
+      <p class="viewer__meta tiny"></p>
+      <p class="viewer__story"></p>
+      <figure class="haiku viewer__haiku"></figure>
+      <nav class="viewer__nav tiny" aria-label="Other parks">
+        <button type="button" class="viewer__prev" data-cursor="prev">← 前 · Previous</button>
+        <button type="button" class="viewer__next" data-cursor="next">Next · 次 →</button>
+      </nav>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <svg viewBox="0 0 600 600" aria-hidden="true"><path d="M 330.6 82.1 A 220 220 0 1 1 217.6 96" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round"/></svg>
+    <p class="tiny" data-i18n="footer">kōen · concept project · design and development by Otiniel B.</p>
+  </footer>
+
+  <!-- Scripts are inline so the page also works when opened straight from disk -->
+  <script type="module">
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import Lenis from 'lenis';
+
+    window.__koenReady = true;
+    gsap.registerPlugin(ScrollTrigger);
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const root = document.documentElement;
+    const store = {
+      get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
+      set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* private mode */ } },
+    };
+
+    // Slow, heavy scrolling suits the pace of the page.
+    let lenis = null;
+    if (!reducedMotion) {
+      lenis = new Lenis({ lerp: 0.06 });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+    const goTo = (target) => {
+      if (lenis) lenis.scrollTo(target, { duration: 2.4 });
+      else window.scrollTo({ top: target.offsetTop });
+    };
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        goTo(target);
+      });
+    });
+
+    // =====================================================================
+    // Ensō: one brush stroke with real weight. It presses in, swells, and
+    // runs dry at the end, leaving pale streaks where the bristles split.
+    // =====================================================================
+    function buildEnso() {
+      const ink = document.querySelector('.enso__ink');
+      const reveal = document.querySelector('.enso__reveal');
+      const cx = 300, cy = 300, R = 218, N = 220;
+      const a0 = (-82 * Math.PI) / 180, span = (330 * Math.PI) / 180;
+      const outer = [], inner = [], mid = [];
+      for (let i = 0; i <= N; i++) {
+        const t = i / N;
+        const a = a0 + span * t;
+        const r = R + Math.sin(t * 7.3) * 4 + Math.sin(t * 19) * 1.6;
+        let w = t < 0.05 ? 12 + (t / 0.05) * 24 : 36 + Math.sin(t * 5.1) * 5 - t * 12;
+        if (t > 0.78) w *= 1 - ((t - 0.78) / 0.22) * 0.88; // the brush runs dry
+        const c = Math.cos(a), s = Math.sin(a);
+        outer.push([cx + c * (r + w / 2), cy + s * (r + w / 2)]);
+        inner.push([cx + c * (r - w / 2), cy + s * (r - w / 2)]);
+        mid.push([cx + c * r, cy + s * r]);
+      }
+      const pts = (arr) => arr.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join(' L ');
+      const shape = `M ${pts(outer)} L ${pts(inner.reverse())} Z`;
+      const ns = 'http://www.w3.org/2000/svg';
+      const body = document.createElementNS(ns, 'path');
+      body.setAttribute('d', shape);
+      body.setAttribute('fill', 'currentColor');
+      ink.append(body);
+
+      // Ink pools where the brush first touches the paper.
+      const pool = document.createElementNS(ns, 'circle');
+      pool.setAttribute('cx', mid[0][0]); pool.setAttribute('cy', mid[0][1]); pool.setAttribute('r', 11);
+      pool.setAttribute('fill', 'currentColor');
+      ink.append(pool);
+
+      // Dry-brush streaks in the last stretch of the stroke.
+      [-9, -3, 4, 10].forEach((off, k) => {
+        const streak = [];
+        for (let i = Math.floor(N * (0.5 + k * 0.04)); i <= N; i++) {
+          const a = a0 + span * (i / N);
+          const r = R + off + Math.sin((i / N) * 7.3) * 4;
+          streak.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]);
+        }
+        const p = document.createElementNS(ns, 'path');
+        p.setAttribute('d', `M ${pts(streak)}`);
+        p.setAttribute('fill', 'none');
+        p.style.stroke = 'var(--washi)'; // follows the paper tint of the season
+        p.setAttribute('stroke-width', 1 + (k % 2) * 0.8);
+        p.setAttribute('stroke-dasharray', `${30 + k * 12} ${6 + k * 3} ${80 - k * 10} ${10 + k * 2}`);
+        ink.append(p);
+      });
+
+      reveal.setAttribute('d', `M ${pts(mid)}`);
+      return reveal;
+    }
+    const reveal = buildEnso();
+
+    // ---------- Ink blot used as a mask: photos soak through like ink ----------
+    const blot = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='f' x='-20%' y='-20%' width='140%' height='140%'><feTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='3' seed='4'/><feDisplacementMap in='SourceGraphic' scale='42'/></filter><circle cx='100' cy='100' r='58' fill='black' filter='url(#f)'/></svg>`;
+    root.style.setProperty('--blot', `url("data:image/svg+xml;utf8,${encodeURIComponent(blot)}")`);
+    function inkReveal(img, delay = 0) {
+      const size = { s: 0 };
+      return gsap.to(size, {
+        s: 340, duration: 2.6, delay, ease: 'power2.out',
+        onUpdate: () => { const v = `${size.s}% ${size.s}%`; img.style.webkitMaskSize = v; img.style.maskSize = v; },
+        onComplete: () => img.classList.add('is-done'),
+      });
+    }
+
+    // =====================================================================
+    // Language: English and Japanese
+    // =====================================================================
+    const ja = {
+      'nav.parks': '公園', 'nav.ways': '仕事', 'nav.studio': 'スタジオ', 'nav.write': 'お便り',
+      'hero.line': '呼吸を忘れた都市のための、公園。',
+      'statement': '私たちは東京とリスボンにある小さなスタジオです。庭師のように、ゆっくりと公園をつくります。人が歩く道と、八月に影が落ちる場所を見つめながら。',
+      'parks.sub': '四つの公園<br>2022〜2024',
+      'cap1': '東京', 'cap2': '札幌', 'cap3': 'リスボン', 'cap4': '大阪',
+      'p1.meta': '東京・3.1ヘクタール・1,240本の木',
+      'p1.story': 'かつての貨物ヤードを、檜の並木道に変えました。線路は残し、その間に苔を育てています。',
+      'p2.meta': '札幌・1.4ヘクタール・420本の木',
+      'p2.story': '朝霧から水を集める小さな庭。漁船から借りた網を使っています。',
+      'p3.meta': 'リスボン・5.6ヘクタール・2,150本の木',
+      'p3.story': '五キロの川岸を街に返しました。コルクガシと松、そして水辺を向いたベンチ。',
+      'p4.meta': '大阪・7.8ヘクタール・3,800本の木',
+      'p4.story': 'わざと水に浸かる草原。川が増水すると、街の代わりに公園が水を受け止めます。',
+      'ways.sub': '私たちの<br>やり方',
+      'r1.h': 'まず植え、舗装はあとで。', 'r1.p': '道より先に木を描き、ひと季節待って、草がすり減る場所を見つけます。',
+      'r2.h': '木陰はインフラである。', 'r2.p': '私たちの公園は、十年目の夏までに木陰が四割を超えます。',
+      'r3.h': 'ベンチは木に向ける。', 'r3.p': '道路でも、向かいのビルの画面でもなく。目の前に生きているものがあると、人は長くとどまります。',
+      'r4.h': '縁は野生のままに。', 'r4.p': '真ん中は整えてもいい。縁は背の高い草と虫と、ときどき現れる狐のもの。',
+      'studio.k': 'スタジオ', 'studio.h': '九千キロ離れた、二つの部屋。',
+      'city1': '東京・清澄', 'city2': 'リスボン・アルファマ',
+      'studio.p': '半分は隅田川沿いの古い米蔵で、もう半分はアルファマのパン屋の二階で働いています。図面は夜のうちに旅をするので、いつも誰かが起きて仕事を進めています。',
+      'write.k': 'お便り', 'write.h': 'あなたの場所について、教えてください。',
+      'send': '封をして送る',
+      'footer': 'kōen・コンセプトプロジェクト・デザインと開発：Otiniel B.',
+      'ph.where': 'どこにありますか。広さは？', 'ph.email': 'メールアドレス',
+    };
+    const en = {};
+    document.querySelectorAll('[data-i18n]').forEach((el) => { en[el.dataset.i18n] = el.innerHTML; });
+    document.querySelectorAll('[data-i18n-ph]').forEach((el) => { en[el.dataset.i18nPh] = el.placeholder; });
+    let lang = store.get('koen-lang') === 'ja' ? 'ja' : 'en';
+    const langBtn = document.querySelector('.lang');
+
+    function applyLang(next, animate) {
+      const swap = () => {
+        lang = next;
+        root.lang = next;
+        const dict = next === 'ja' ? ja : en;
+        document.querySelectorAll('[data-i18n]').forEach((el) => { el.innerHTML = dict[el.dataset.i18n]; });
+        document.querySelectorAll('[data-i18n-ph]').forEach((el) => { el.placeholder = dict[el.dataset.i18nPh]; });
+        langBtn.innerHTML = next === 'ja' ? 'EN / <b>日本語</b>' : '<b>EN</b> / 日本語';
+        updateSeasonCaption();
+        store.set('koen-lang', next);
+        ScrollTrigger.refresh();
+      };
+      if (!animate || reducedMotion) { swap(); return; }
+      gsap.to('main, .header__nav, .footer', { opacity: 0, duration: 0.45, ease: 'power1.in', onComplete: () => {
+        swap();
+        gsap.to('main, .header__nav, .footer', { opacity: 1, duration: 0.8, ease: 'power1.out' });
+      } });
+    }
+    langBtn.addEventListener('click', () => applyLang(lang === 'en' ? 'ja' : 'en', true));
+
+    // =====================================================================
+    // Seasons: the paper, the caption and what falls from the sky
+    // =====================================================================
+    const seasonText = {
+      spring: { en: 'Spring · the cherry trees', ja: '春・桜のころ' },
+      summer: { en: 'Summer · deep shade', ja: '夏・深い木陰' },
+      autumn: { en: 'Autumn · the maples turn', ja: '秋・紅葉のころ' },
+      winter: { en: 'Winter · bare branches', ja: '冬・裸の枝' },
+    };
+    const month = new Date().getMonth();
+    const bySeason = month >= 2 && month <= 4 ? 'spring' : month >= 5 && month <= 7 ? 'summer' : month >= 8 && month <= 10 ? 'autumn' : 'winter';
+    let season = store.get('koen-season') || bySeason;
+    const caption = document.querySelector('.hero__season');
+    function updateSeasonCaption() { caption.textContent = seasonText[season][lang]; }
+
+    const fall = (() => {
+      const canvas = document.querySelector('.season-fall');
+      const ctx = canvas.getContext('2d');
+      const isSmall = window.innerWidth < 768;
+      let W = 0, H = 0, items = [], kind = season;
+      const palettes = {
+        spring: ['#efbcc4', '#f4cfd4', '#e8a9b4'],
+        summer: ['#8fa77d', '#a3b98f', '#7d9670'],
+        autumn: ['#b83a26', '#cf6a2a', '#d99a3a', '#a8432c'],
+        winter: ['#b3bec9', '#c3ccd5', '#a4b0bd'],
+      };
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio, 2);
+        W = window.innerWidth; H = window.innerHeight;
+        canvas.width = W * dpr; canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      function spawn(randomY) {
+        const p = palettes[kind];
+        return {
+          x: Math.random() * W,
+          y: randomY ? Math.random() * H : -20 - Math.random() * 60,
+          s: (isSmall ? 5 : 6) + Math.random() * 5 + (kind === 'autumn' ? 3 : 0),
+          vy: (kind === 'winter' ? 0.35 : 0.45) + Math.random() * 0.45,
+          drift: 0.4 + Math.random() * 0.8,
+          phase: Math.random() * Math.PI * 2,
+          rot: Math.random() * Math.PI * 2,
+          vr: (Math.random() - 0.5) * 0.02,
+          color: p[(Math.random() * p.length) | 0],
+        };
+      }
+      function setKind(next) {
+        kind = next;
+        const count = isSmall ? 8 : 14;
+        items = Array.from({ length: count }, () => spawn(true));
+      }
+      function drawLeaf(it, t) {
+        const s = it.s;
+        ctx.save();
+        ctx.translate(it.x, it.y);
+        ctx.rotate(it.rot);
+        ctx.scale(Math.cos(t * 0.0015 + it.phase), 1); // turning over as it falls
+        ctx.fillStyle = it.color;
+        ctx.beginPath();
+        if (kind === 'spring') { // sakura petal with its little notch
+          ctx.moveTo(0, s);
+          ctx.bezierCurveTo(s * 0.9, s * 0.4, s * 0.7, -s * 0.8, s * 0.18, -s);
+          ctx.lineTo(0, -s * 0.72);
+          ctx.lineTo(-s * 0.18, -s);
+          ctx.bezierCurveTo(-s * 0.7, -s * 0.8, -s * 0.9, s * 0.4, 0, s);
+        } else if (kind === 'summer') { // a young green leaf
+          ctx.ellipse(0, 0, s * 0.45, s, 0, 0, Math.PI * 2);
+        } else if (kind === 'autumn') { // momiji: slender lobes fanning out from the stem
+          [[-90, 1.15], [-45, 1], [-135, 1], [0, 0.7], [180, 0.7]].forEach(([deg, len]) => {
+            const a = (deg * Math.PI) / 180;
+            ctx.moveTo(0, 0);
+            ctx.quadraticCurveTo(Math.cos(a - 0.38) * s * len * 0.55, Math.sin(a - 0.38) * s * len * 0.55, Math.cos(a) * s * len * 1.2, Math.sin(a) * s * len * 1.2);
+            ctx.quadraticCurveTo(Math.cos(a + 0.38) * s * len * 0.55, Math.sin(a + 0.38) * s * len * 0.55, 0, 0);
+          });
+          ctx.moveTo(0, 0);
+          ctx.lineTo(s * 0.06, s * 0.9);
+          ctx.lineTo(-s * 0.06, s * 0.9);
+          ctx.closePath();
+        } else { // snow
+          ctx.arc(0, 0, s * 0.32, 0, Math.PI * 2);
+        }
+        ctx.globalAlpha = kind === 'winter' ? 0.75 : 0.85;
+        ctx.fill();
+        ctx.restore();
+      }
+      function frame(t) {
+        requestAnimationFrame(frame);
+        ctx.clearRect(0, 0, W, H);
+        for (const it of items) {
+          it.y += it.vy;
+          it.x += Math.sin(t * 0.0008 + it.phase) * it.drift * 0.6;
+          it.rot += it.vr;
+          if (it.y > H + 24) Object.assign(it, spawn(false));
+          drawLeaf(it, t);
+        }
+      }
+      if (!reducedMotion) {
+        resize();
+        window.addEventListener('resize', resize);
+        setKind(kind);
+        requestAnimationFrame(frame);
+      }
+      return { setKind: (k) => { if (!reducedMotion) setKind(k); } };
+    })();
+
+    const seasonBtns = document.querySelectorAll('.seasons button');
+    function applySeason(next) {
+      season = next;
+      root.dataset.season = next;
+      seasonBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.season === next)));
+      updateSeasonCaption();
+      fall.setKind(next);
+      store.set('koen-season', next);
+    }
+    seasonBtns.forEach((b) => b.addEventListener('click', () => applySeason(b.dataset.season)));
+
+    applySeason(season);
+    if (lang === 'ja') applyLang('ja', false);
+
+    // ---------- Hero: the ensō is painted, then the photo soaks through ----------
+    if (!reducedMotion) {
+      gsap.set(reveal, { strokeDasharray: 1, strokeDashoffset: 1 });
+      gsap.set('.hero__kanji, .header > *, .hero__frame', { opacity: 0 });
+      gsap.timeline({ delay: 0.4 })
+        .to(reveal, { strokeDashoffset: 0, duration: 2.8, ease: 'power1.inOut' })
+        .to('.hero__frame', { opacity: 1, duration: 1.2, ease: 'power1.out' }, 1.6)
+        .add(() => inkReveal(document.querySelector('.hero__frame img')), 1.8)
+        .to('.hero__kanji', { opacity: 1, duration: 2, ease: 'power1.out' }, 2.2)
+        .to('.header > *', { opacity: 1, duration: 1.6, stagger: 0.1 }, 2.4);
+
+      gsap.to('.enso', { rotation: 50, opacity: 0.15, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+      gsap.to('.hero__frame', { yPercent: -30, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    }
+
+    // ---------- Quiet reveals ----------
+    if (!reducedMotion) {
+      gsap.utils.toArray('[data-reveal]').forEach((el) => {
+        gsap.from(el, {
+          opacity: 0, y: 24, filter: 'blur(6px)', duration: 1.8, ease: 'power2.out',
+          delay: el.closest('.hero') ? 2.6 : 0,
+          scrollTrigger: el.closest('.hero') ? null : { trigger: el, start: 'top 88%' },
+        });
+      });
+      // Frame and photo arrive together; the photo then drifts slowly inside its mount.
+      gsap.utils.toArray('.spread__frame').forEach((frame) => {
+        const img = frame.querySelector('img');
+        gsap.set(frame, { opacity: 0, y: 40 });
+        ScrollTrigger.create({
+          trigger: frame, start: 'top 92%', once: true,
+          onEnter: () => { gsap.to(frame, { opacity: 1, y: 0, duration: 1.4, ease: 'power2.out' }); inkReveal(img, 0.2); },
+        });
+        gsap.fromTo(img, { yPercent: -8 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: frame, start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+      gsap.utils.toArray('.haiku__jp').forEach((h) => {
+        gsap.from(h, { clipPath: 'inset(0 0 100% 0)', duration: 2.4, ease: 'power2.inOut', scrollTrigger: { trigger: h, start: 'top 85%' } });
+      });
+    }
+
+    // ---------- Park viewer: a full page of the book for each park ----------
+    const viewer = document.querySelector('.viewer');
+    const vImg = viewer.querySelector('.viewer__media img');
+    const vFrame = viewer.querySelector('.viewer__frame');
+    const vText = viewer.querySelector('.viewer__text');
+    const spreads = [...document.querySelectorAll('.spread')];
+    let current = -1, lastFocus = null, busy = false;
+
+    function fillViewer(i) {
+      const sp = spreads[i];
+      const img = sp.querySelector('.spread__media img');
+      viewer.querySelector('.viewer__num').textContent = sp.querySelector('.spread__num').textContent;
+      viewer.querySelector('.viewer__name').innerHTML = sp.querySelector('.spread__name').innerHTML;
+      viewer.querySelector('.viewer__meta').textContent = `${sp.querySelector('.spread__meta').textContent} · ${sp.querySelector('.spread__caption span:last-child').textContent}`;
+      viewer.querySelector('.viewer__story').textContent = sp.querySelector('.spread__story').textContent;
+      const haiku = viewer.querySelector('.viewer__haiku');
+      haiku.innerHTML = sp.querySelector('.haiku').innerHTML;
+      haiku.querySelectorAll('[style]').forEach((el) => el.removeAttribute('style')); // drop half-finished reveal styles
+      vImg.src = img.src.replace('w=900', 'w=1600');
+      vImg.alt = img.alt;
+      viewer.setAttribute('aria-label', sp.querySelector('.spread__name').firstChild.textContent.trim());
+    }
+    function showPage() {
+      vImg.classList.remove('is-done');
+      vImg.style.webkitMaskSize = vImg.style.maskSize = '0% 0%';
+      if (reducedMotion) { vImg.classList.add('is-done'); return; }
+      inkReveal(vImg, 0.15);
+      gsap.fromTo(vText.children, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1, stagger: 0.07, ease: 'power2.out', delay: 0.2 });
+    }
+    function openViewer(i) {
+      if (busy) return;
+      current = i;
+      lastFocus = document.activeElement;
+      fillViewer(i);
+      viewer.hidden = false;
+      lenis?.stop();
+      gsap.fromTo(viewer, { opacity: 0 }, { opacity: 1, duration: reducedMotion ? 0 : 0.7, ease: 'power1.out' });
+      showPage();
+      viewer.querySelector('.viewer__close').focus({ preventScroll: true });
+    }
+    function closeViewer() {
+      if (viewer.hidden || busy) return;
+      busy = true;
+      gsap.to(viewer, { opacity: 0, duration: reducedMotion ? 0 : 0.6, ease: 'power1.in', onComplete: () => {
+        viewer.hidden = true;
+        busy = false;
+        lenis?.start();
+        lastFocus?.focus({ preventScroll: true });
+      } });
+    }
+    function stepViewer(dir) {
+      if (busy) return;
+      busy = true;
+      const next = (current + dir + spreads.length) % spreads.length;
+      gsap.to([vFrame, vText], { opacity: 0, duration: 0.35, ease: 'power1.in', onComplete: () => {
+        current = next;
+        fillViewer(next);
+        gsap.set([vFrame, vText], { opacity: 1 });
+        showPage();
+        busy = false;
+      } });
+    }
+    spreads.forEach((sp, i) => {
+      const frame = sp.querySelector('.spread__frame');
+      frame.setAttribute('role', 'button');
+      frame.setAttribute('tabindex', '0');
+      frame.setAttribute('aria-label', `Open ${sp.querySelector('.spread__name').firstChild.textContent.trim()}`);
+      frame.addEventListener('click', () => openViewer(i));
+      frame.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openViewer(i); } });
+    });
+    viewer.querySelector('.viewer__close').addEventListener('click', closeViewer);
+    viewer.querySelector('.viewer__prev').addEventListener('click', () => stepViewer(-1));
+    viewer.querySelector('.viewer__next').addEventListener('click', () => stepViewer(1));
+    window.addEventListener('keydown', (e) => {
+      if (viewer.hidden) return;
+      if (e.key === 'Escape') closeViewer();
+      if (e.key === 'ArrowRight') stepViewer(1);
+      if (e.key === 'ArrowLeft') stepViewer(-1);
+    });
+
+    // ---------- Side index: where you are, and a way to jump ----------
+    const indexBtns = document.querySelectorAll('.index button');
+    indexBtns.forEach((btn) => {
+      const section = document.getElementById(btn.dataset.target);
+      btn.addEventListener('click', () => goTo(section));
+      ScrollTrigger.create({
+        trigger: section, start: 'top 55%', end: 'bottom 55%',
+        onToggle: (self) => { if (self.isActive) indexBtns.forEach((b) => b.classList.toggle('is-active', b === btn)); },
+      });
+    });
+
+    // ---------- Two clocks, with a breathing colon ----------
+    const clockFmt = (tz) => new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
+    function tick() {
+      document.querySelectorAll('[data-tz]').forEach((el) => {
+        const [h, m] = clockFmt(el.dataset.tz);
+        el.innerHTML = `${h}<span>:</span>${m}`;
+      });
+    }
+    tick();
+    setInterval(tick, 20000);
+
+    // ---------- Letter: kind of place, inline checks, a seal that stamps ----------
+    const letter = document.querySelector('.letter');
+    const note = document.querySelector('.letter__note');
+    const seal = letter.querySelector('.letter__send .seal');
+    const email = letter.querySelector('#email');
+    const emailError = document.querySelector('#email-error');
+    const kinds = letter.querySelectorAll('.kind');
+    let kind = kinds[0];
+    kinds.forEach((k) => k.addEventListener('click', () => {
+      kind = k;
+      kinds.forEach((o) => o.setAttribute('aria-pressed', String(o === k)));
+    }));
+    const msg = {
+      en: { missing: 'We will need an email to write back.', invalid: 'That email does not look quite right.',
+            ok: (k) => `Thank you. Your letter about a ${k.dataset.kind} is on its way. We read every one and reply within two days.` },
+      ja: { missing: '返信のためにメールアドレスが必要です。', invalid: 'メールアドレスをご確認ください。',
+            ok: (k) => `ありがとうございます。${k.dataset.ja}についてのお便りを受け取りました。二日以内にお返事します。` },
+    };
+    function checkEmail() {
+      const problem = !email.value ? 'missing' : !email.checkValidity() ? 'invalid' : '';
+      email.setAttribute('aria-invalid', problem ? 'true' : 'false');
+      emailError.textContent = problem ? msg[lang][problem] : '';
+      return !problem;
+    }
+    email.addEventListener('blur', () => { if (email.value) checkEmail(); });
+    email.addEventListener('input', () => { if (email.getAttribute('aria-invalid') === 'true') checkEmail(); });
+    letter.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!checkEmail()) { email.focus(); return; }
+      gsap.timeline()
+        .to(seal, { scale: 1.35, rotation: -14, duration: 0.25, ease: 'power2.out' })
+        .to(seal, { scale: 0.92, rotation: -4, duration: 0.18, ease: 'power3.in' })
+        .to(seal, { scale: 1, duration: 0.6, ease: 'elastic.out(1, 0.5)' });
+      note.innerHTML = `<span class="imprint">園</span>${msg[lang].ok(kind)}`;
+      gsap.from(note, { opacity: 0, duration: 1.2, delay: 0.3 });
+      letter.reset();
+      email.setAttribute('aria-invalid', 'false');
+    });
+
+    // ---------- Header steps aside while you read ----------
+    const header = document.querySelector('.header');
+    ScrollTrigger.create({
+      start: 0, end: 'max',
+      onUpdate: (self) => header.classList.toggle('is-hidden', self.direction === 1 && self.scroll() > window.innerHeight * 0.5),
+    });
+
+    // ---------- Cursor: a drop of ink and a slow ring ----------
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      root.classList.add('has-cursor');
+      const drop = document.querySelector('.drop');
+      const ring = document.querySelector('.ring');
+      const label = ring.querySelector('span');
+      const dx = gsap.quickTo(drop, 'x', { duration: 0.15 });
+      const dy = gsap.quickTo(drop, 'y', { duration: 0.15 });
+      const rx = gsap.quickTo(ring, 'x', { duration: 0.9, ease: 'power3.out' });
+      const ry = gsap.quickTo(ring, 'y', { duration: 0.9, ease: 'power3.out' });
+      window.addEventListener('pointermove', (e) => {
+        dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);
+        drop.classList.add('is-visible'); ring.classList.add('is-visible');
+      }, { passive: true });
+      root.addEventListener('pointerleave', () => { drop.classList.remove('is-visible'); ring.classList.remove('is-visible'); });
+      document.addEventListener('pointerover', (e) => {
+        const target = e.target.closest('[data-cursor], a, button, input');
+        const text = target?.dataset.cursor || '';
+        ring.classList.toggle('has-label', !!text);
+        ring.classList.toggle('is-link', !!target && !text);
+        label.textContent = text;
+      });
+    }
+  </script>
+</body>
+</html>
